@@ -430,6 +430,122 @@ body {
 }
 .nav-hidden { display: none !important; }
 
+/* Parciales */
+.parcial-block {
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid var(--border);
+}
+.parcial-block:last-child { border-bottom: none; }
+.parcial-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.parcial-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.parcial-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.pregunta-desarrollo {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+.pregunta-desarrollo .enunciado { margin-bottom: 10px; }
+.btn-revelar {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: var(--font);
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-revelar:hover { background: var(--accent-hover); }
+.respuesta-modelo {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: var(--green-bg);
+  border-left: 3px solid var(--green);
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.respuesta-modelo.visible { display: block; }
+.pregunta-completar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+.completar-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.completar-input {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--mono);
+  width: 200px;
+  outline: none;
+  transition: border-color .15s;
+}
+.completar-input:focus { border-color: var(--accent); }
+.completar-input.input-correct {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+.completar-input.input-wrong {
+  border-color: var(--red);
+  background: var(--red-bg);
+}
+.btn-verificar {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: var(--font);
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.completar-feedback {
+  display: none;
+  margin-top: 8px;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.completar-feedback.cf-correct {
+  display: block;
+  background: var(--green-bg);
+  color: var(--green);
+}
+.completar-feedback.cf-wrong {
+  display: block;
+  background: var(--red-bg);
+  color: var(--red);
+}
+
 @media (max-width: 900px) {
   #menu-toggle { display: block; }
   .sidebar {
@@ -475,6 +591,7 @@ body {
 <li><a href="#" onclick="showSection('14')" data-id="14"><span class="nav-num">14.</span> Redes (IP, máscara, CIDR, config)</a></li>
 <li><a href="#" onclick="showSection('15')" data-id="15"><span class="nav-num">15.</span> DNS y DHCP</a></li>
 <li><a href="#" onclick="showSection('16')" data-id="16"><span class="nav-num">16.</span> SSH</a></li>
+<li><a href="#" onclick="showSection('parciales')" data-id="parciales">Parciales de pr&aacute;ctica</a></li>
 
   </ul>
 </nav>
@@ -483,7 +600,7 @@ body {
 
 <section id="sec-indice" class="section active">
   <h1>Computación Aplicada</h1>
-  <p class="subtitle">16 apuntes · 480 preguntas de multiple choice · material completo para el parcial</p>
+  <p class="subtitle">16 apuntes · 480 preguntas de multiple choice · 4 parciales de pr&aacute;ctica</p>
   <table class="indice-table">
     <thead><tr><th>Apunte</th><th>Preguntas</th></tr></thead>
     <tbody>
@@ -550,6 +667,10 @@ body {
 <tr>
   <td><a class="link-apunte" onclick="showSection('16')">16. SSH</a></td>
   <td><span class="badge-q">30</span></td>
+</tr>
+<tr>
+  <td><a class="link-apunte" onclick="showSection('parciales')">Parciales de pr&aacute;ctica</a></td>
+  <td><span class="badge-q">4 parciales</span></td>
 </tr></tbody>
   </table>
 </section>
@@ -12332,6 +12453,536 @@ Enter file in which to save the key (/root/.ssh/id_rsa):
   </div>
 </section>
 
+<section id="sec-parciales" class="section">
+  <div class="apunte-header">
+    <h1>Parciales de pr&aacute;ctica</h1>
+  </div>
+  <div class="resumen-container">
+    <p>4 parciales con 16 preguntas cada uno (6.25 pts c/u). Mismo formato que el examen real: multiple choice, desarrollo y completar.</p>
+
+<!-- ==================== PARCIAL 1 ==================== -->
+<div class="parcial-block" id="parcial-1">
+<h2 class="parcial-title">Parcial 1 — 1er Parcial 2025 1C (Real)</h2>
+<p class="parcial-subtitle">Parcial tomado en la cursada. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p1">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p1')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p1-1" data-correct="c">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Qu&eacute; direcci&oacute;n IP es conocida como localhost?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p1','1','a')">a) 192.168.0.1</button>
+    <button class="opcion" data-letter="b" onclick="responder('p1','1','b')">b) 10.0.0.1</button>
+    <button class="opcion" data-letter="c" onclick="responder('p1','1','c')">c) 127.0.0.1</button>
+    <button class="opcion" data-letter="d" onclick="responder('p1','1','d')">d) 0.0.0.0</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">127.0.0.1 es la direcci&oacute;n de loopback, conocida como localhost. Siempre apunta al propio equipo.</span></div>
+</div>
+
+<div class="pregunta" id="q-p1-2" data-correct="b">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Cu&aacute;l de los siguientes comandos es para cambiar al propietario de un archivo a un usuario en particular?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p1','2','a')">a) chroot</button>
+    <button class="opcion" data-letter="b" onclick="responder('p1','2','b')">b) chown</button>
+    <button class="opcion" data-letter="c" onclick="responder('p1','2','c')">c) changeuser</button>
+    <button class="opcion" data-letter="d" onclick="responder('p1','2','d')">d) assign</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">chown (change owner) cambia el propietario de un archivo o directorio.</span></div>
+</div>
+
+<div class="pregunta" id="q-p1-3" data-correct="a">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Qu&eacute; archivo se utiliza para configurar SSH Server?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p1','3','a')">a) /etc/sshd_config</button>
+    <button class="opcion" data-letter="b" onclick="responder('p1','3','b')">b) /etc/network/interfaces</button>
+    <button class="opcion" data-letter="c" onclick="responder('p1','3','c')">c) /etc/hosts</button>
+    <button class="opcion" data-letter="d" onclick="responder('p1','3','d')">d) /etc/ssh_config</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">/etc/sshd_config es el archivo de configuraci&oacute;n del servidor SSH (daemon). /etc/ssh_config es el del cliente.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-4">
+  <p class="enunciado"><span class="q-num">4.</span> &iquest;Para qu&eacute; se utiliza el comando <code>apt-get update</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-4">El comando <code>apt-get update</code> sirve para actualizar la lista local de paquetes que est&aacute;n disponibles en los repositorios configurados. No instala ni actualiza paquetes, solo descarga la informaci&oacute;n m&aacute;s reciente sobre qu&eacute; paquetes existen y en qu&eacute; versi&oacute;n.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-5">
+  <p class="enunciado"><span class="q-num">5.</span> Definir, con palabras propias, cu&aacute;l es la funci&oacute;n del <em>kernel</em>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-5">La funci&oacute;n del kernel es administrar el acceso del sistema operativo hacia el hardware f&iacute;sico y viceversa. Act&uacute;a como intermediario entre las aplicaciones de usuario y los componentes de hardware (CPU, memoria, discos, etc.).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-6">
+  <p class="enunciado"><span class="q-num">6.</span> Explicar el prop&oacute;sito del comando <code>rm</code>, las diferencias con <code>rmdir</code> y cu&aacute;l utilizar&iacute;a para el borrado de directorios.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-6">El comando <code>rm</code> elimina archivos y, con la opci&oacute;n <code>-r</code>, tambi&eacute;n directorios de forma recursiva (incluyendo todo su contenido). <code>rmdir</code> solo elimina directorios <strong>vac&iacute;os</strong>. Para borrar un directorio con contenido se usa <code>rm -r directorio</code>. Si el directorio est&aacute; vac&iacute;o, se puede usar <code>rmdir</code>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;En qu&eacute; directorio se encuentran los &ldquo;espacios de trabajo&rdquo; de los usuarios?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-7">Los espacios de trabajo (home directories) de los usuarios se encuentran en <code>/home/</code>. Cada usuario creado en el sistema tiene por defecto una carpeta con su nombre dentro de ese directorio. Por ejemplo, el usuario <em>juan</em> tendr&aacute; su home en <code>/home/juan</code>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-8">
+  <p class="enunciado"><span class="q-num">8.</span> &iquest;Para qu&eacute; se utiliza un DNS?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-8">DNS (Domain Name System) es un protocolo que resuelve nombres de dominio en direcciones IP. Cuando quer&eacute;s acceder a un sitio como www.google.com, el DNS traduce ese nombre a la direcci&oacute;n IP del servidor para poder establecer la conexi&oacute;n.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-9">
+  <p class="enunciado"><span class="q-num">9.</span> &iquest;Cu&aacute;l es el UID del usuario <em>root</em>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-9">El UID del usuario root es <strong>0</strong>. Este es siempre el identificador del superusuario en cualquier sistema Linux.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-10">
+  <p class="enunciado"><span class="q-num">10.</span> Si se utiliza el comando <code>chmod 0600 Archivo1</code>, &iquest;qui&eacute;n tendr&aacute; permisos de lectura y escritura?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-10">Solo el <strong>propietario (owner)</strong> tendr&aacute; permisos de lectura y escritura. El primer 0 es para permisos especiales (ninguno), el 6 es para el owner (r=4 + w=2 = 6), el segundo 0 es para el grupo (ning&uacute;n permiso) y el tercer 0 es para others (ning&uacute;n permiso).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-11">
+  <p class="enunciado"><span class="q-num">11.</span> &iquest;Cu&aacute;les son los tres par&aacute;metros m&aacute;s importantes que se deben configurar de una interfaz de red? Enumerar y explicar.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-11"><strong>1. IP address:</strong> la direcci&oacute;n IP (de host) que tendr&aacute; esa interfaz.<br><strong>2. Gateway (puerta de enlace):</strong> permite la conexi&oacute;n entre dispositivos en redes distintas. Generalmente es la primera IP disponible de la red.<br><strong>3. Netmask (m&aacute;scara de red):</strong> indica qu&eacute; parte de la IP identifica a la red y qu&eacute; parte identifica al host. Ej: 255.255.255.0 para una red /24.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-12">
+  <p class="enunciado"><span class="q-num">12.</span> &iquest;Qu&eacute; son los usuarios <em>especiales</em>? Dar un ejemplo.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-12">Los usuarios especiales son usuarios del sistema que ejecutan procesos o servicios de administraci&oacute;n pero que no son usuarios logueables (no tienen shell interactiva). Son usados por el sistema operativo y algunos poseen permisos de root. Ejemplo: <code>www-data</code> (usuario del servidor web Apache/Nginx), <code>nobody</code>, <code>daemon</code>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p1-13">
+  <p class="enunciado"><span class="q-num">13.</span> Definir el concepto de distribuci&oacute;n GNU/Linux.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p1-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p1-13">Una distribuci&oacute;n GNU/Linux es un sistema operativo basado en el kernel Linux y las herramientas GNU, licenciado bajo GPL (General Public License). Es software que puede ser usado, modificado y distribuido libremente. Una distribuci&oacute;n empaqueta el kernel junto con software adicional pensado para un p&uacute;blico o uso particular (escritorio, servidor, seguridad, etc.). Ejemplos: Ubuntu, Debian, Fedora.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p1-14">
+  <p class="enunciado"><span class="q-num">14.</span> <span class="completar-blank"></span> es el directorio ra&iacute;z de Linux.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p1-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p1-14', ['/'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p1-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p1-15">
+  <p class="enunciado"><span class="q-num">15.</span> <span class="completar-blank"></span> es el n&uacute;mero correspondiente al descriptor de archivo de la salida standard.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p1-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p1-15', ['1','uno'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p1-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p1-16">
+  <p class="enunciado"><span class="q-num">16.</span> Para buscar un paquete en los repositorios, utilizamos el comando <span class="completar-blank"></span> nombre_paquete.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p1-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p1-16', ['apt-cache search','apt search'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p1-16"></div>
+</div>
+</div>
+
+<!-- ==================== PARCIAL 2 ==================== -->
+<div class="parcial-block" id="parcial-2">
+<h2 class="parcial-title">Parcial 2 — Comandos, FHS y Permisos</h2>
+<p class="parcial-subtitle">Parcial generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p2">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p2')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p2-1" data-correct="b">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Qu&eacute; comando se utiliza para copiar archivos y directorios?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p2','1','a')">a) mv</button>
+    <button class="opcion" data-letter="b" onclick="responder('p2','1','b')">b) cp</button>
+    <button class="opcion" data-letter="c" onclick="responder('p2','1','c')">c) copy</button>
+    <button class="opcion" data-letter="d" onclick="responder('p2','1','d')">d) cpy</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>cp</code> (copy) copia archivos y directorios. Con <code>-r</code> copia directorios recursivamente.</span></div>
+</div>
+
+<div class="pregunta" id="q-p2-2" data-correct="d">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Qu&eacute; opci&oacute;n del comando <code>ls</code> muestra los archivos ocultos?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p2','2','a')">a) ls -l</button>
+    <button class="opcion" data-letter="b" onclick="responder('p2','2','b')">b) ls -h</button>
+    <button class="opcion" data-letter="c" onclick="responder('p2','2','c')">c) ls -R</button>
+    <button class="opcion" data-letter="d" onclick="responder('p2','2','d')">d) ls -a</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>ls -a</code> muestra todos los archivos, incluyendo los ocultos (que empiezan con punto).</span></div>
+</div>
+
+<div class="pregunta" id="q-p2-3" data-correct="c">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;En qu&eacute; directorio del FHS se almacenan los archivos de configuraci&oacute;n del sistema?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p2','3','a')">a) /var</button>
+    <button class="opcion" data-letter="b" onclick="responder('p2','3','b')">b) /usr</button>
+    <button class="opcion" data-letter="c" onclick="responder('p2','3','c')">c) /etc</button>
+    <button class="opcion" data-letter="d" onclick="responder('p2','3','d')">d) /opt</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>/etc</code> almacena los archivos de configuraci&oacute;n del sistema y de los servicios instalados.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-4">
+  <p class="enunciado"><span class="q-num">4.</span> Explicar la diferencia entre rutas absolutas y rutas relativas. Dar un ejemplo de cada una.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-4">Una <strong>ruta absoluta</strong> comienza desde el directorio ra&iacute;z (<code>/</code>) e indica la ubicaci&oacute;n completa. Ejemplo: <code>/home/juan/documentos/archivo.txt</code>.<br>Una <strong>ruta relativa</strong> se define en relaci&oacute;n al directorio actual. Ejemplo: si estoy en <code>/home/juan</code>, la ruta relativa ser&iacute;a <code>documentos/archivo.txt</code>. Se pueden usar <code>.</code> (directorio actual) y <code>..</code> (directorio padre).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-5">
+  <p class="enunciado"><span class="q-num">5.</span> &iquest;Qu&eacute; hace el comando <code>chmod 755 script.sh</code>? Desglosar cada d&iacute;gito.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-5"><code>chmod 755</code> asigna permisos de la siguiente forma:<br><strong>7 (owner):</strong> r(4) + w(2) + x(1) = lectura, escritura y ejecuci&oacute;n.<br><strong>5 (grupo):</strong> r(4) + x(1) = lectura y ejecuci&oacute;n.<br><strong>5 (others):</strong> r(4) + x(1) = lectura y ejecuci&oacute;n.<br>El propietario tiene control total, mientras que el grupo y otros solo pueden leer y ejecutar.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-6">
+  <p class="enunciado"><span class="q-num">6.</span> Explicar qu&eacute; es un <em>pipe</em> (<code>|</code>) en Linux y dar un ejemplo pr&aacute;ctico de su uso.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-6">Un pipe (<code>|</code>) conecta la salida est&aacute;ndar (stdout) de un comando con la entrada est&aacute;ndar (stdin) del siguiente. Permite encadenar comandos.<br>Ejemplo: <code>ls -la /etc | grep ssh</code> &mdash; lista los archivos de /etc y filtra solo los que contienen &ldquo;ssh&rdquo; en su nombre.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;Cu&aacute;l es la diferencia entre redirecci&oacute;n con <code>&gt;</code> y <code>&gt;&gt;</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-7"><code>&gt;</code> redirige la salida a un archivo, <strong>sobrescribi&eacute;ndolo</strong> si ya existe.<br><code>&gt;&gt;</code> redirige la salida a un archivo, <strong>agregando</strong> el contenido al final (append) sin borrar lo que ya hab&iacute;a.<br>Ejemplo: <code>echo "hola" &gt; archivo.txt</code> crea/sobrescribe, <code>echo "chau" &gt;&gt; archivo.txt</code> agrega al final.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-8">
+  <p class="enunciado"><span class="q-num">8.</span> &iquest;Para qu&eacute; sirve el comando <code>find</code>? Dar un ejemplo de b&uacute;squeda por nombre.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-8"><code>find</code> busca archivos y directorios en el sistema de archivos seg&uacute;n distintos criterios (nombre, tipo, tama&ntilde;o, permisos, fecha, etc.).<br>Ejemplo: <code>find /home -name "*.txt"</code> busca todos los archivos con extensi&oacute;n .txt dentro de /home y sus subdirectorios.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-9">
+  <p class="enunciado"><span class="q-num">9.</span> Explicar qu&eacute; es el <em>FHS</em> (Filesystem Hierarchy Standard) y por qu&eacute; es importante.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-9">El FHS (Filesystem Hierarchy Standard) es un est&aacute;ndar que define la estructura de directorios y su contenido en sistemas Linux/Unix. Establece d&oacute;nde deben ubicarse los archivos de configuraci&oacute;n, binarios, bibliotecas, logs, etc. Es importante porque permite que cualquier administrador o desarrollador sepa d&oacute;nde encontrar cada cosa, sin importar la distribuci&oacute;n.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-10">
+  <p class="enunciado"><span class="q-num">10.</span> &iquest;C&oacute;mo se sale del editor <code>vi</code> sin guardar cambios? &iquest;Y guardando?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-10">Para salir <strong>sin guardar</strong>: primero presionar <code>Esc</code> para ir al modo comando, luego escribir <code>:q!</code> y Enter.<br>Para <strong>guardar y salir</strong>: presionar <code>Esc</code>, luego escribir <code>:wq</code> (o <code>:x</code>) y Enter. <code>w</code> = write (guardar), <code>q</code> = quit (salir), <code>!</code> = forzar.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-11">
+  <p class="enunciado"><span class="q-num">11.</span> &iquest;Qu&eacute; diferencia hay entre <code>cat</code>, <code>head</code> y <code>tail</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-11"><code>cat</code> muestra el contenido <strong>completo</strong> de un archivo.<br><code>head</code> muestra las <strong>primeras l&iacute;neas</strong> (por defecto 10).<br><code>tail</code> muestra las <strong>&uacute;ltimas l&iacute;neas</strong> (por defecto 10).<br>Se puede especificar la cantidad con <code>-n</code>. Ejemplo: <code>head -n 5 archivo.txt</code> muestra las primeras 5 l&iacute;neas.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-12">
+  <p class="enunciado"><span class="q-num">12.</span> &iquest;Qu&eacute; comando usar&iacute;as para cambiar el grupo propietario de un archivo? Dar un ejemplo.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-12">Se usa el comando <code>chgrp</code> (change group) o tambi&eacute;n <code>chown :grupo archivo</code>.<br>Ejemplo: <code>chgrp desarrolladores proyecto.txt</code> cambia el grupo de proyecto.txt al grupo &ldquo;desarrolladores&rdquo;.<br>Con chown: <code>chown :desarrolladores proyecto.txt</code> logra lo mismo.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p2-13">
+  <p class="enunciado"><span class="q-num">13.</span> &iquest;Qu&eacute; hace el comando <code>grep</code> y cu&aacute;l es la diferencia con <code>grep -i</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p2-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p2-13"><code>grep</code> busca patrones de texto dentro de archivos o de la entrada est&aacute;ndar y muestra las l&iacute;neas que coinciden.<br><code>grep -i</code> hace la b&uacute;squeda <strong>sin distinguir may&uacute;sculas de min&uacute;sculas</strong> (case-insensitive).<br>Ejemplo: <code>grep -i "error" /var/log/syslog</code> busca &ldquo;error&rdquo;, &ldquo;Error&rdquo;, &ldquo;ERROR&rdquo;, etc.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p2-14">
+  <p class="enunciado"><span class="q-num">14.</span> El directorio <span class="completar-blank"></span> contiene los archivos de log del sistema.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p2-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p2-14', ['/var/log'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p2-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p2-15">
+  <p class="enunciado"><span class="q-num">15.</span> Para ver el contenido de un archivo p&aacute;gina por p&aacute;gina, se utiliza el comando <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p2-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p2-15', ['less','more'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p2-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p2-16">
+  <p class="enunciado"><span class="q-num">16.</span> El descriptor de archivo n&uacute;mero 2 corresponde a <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p2-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p2-16', ['stderr','standard error','error estandar','salida de error','error estándar'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p2-16"></div>
+</div>
+</div>
+
+<!-- ==================== PARCIAL 3 ==================== -->
+<div class="parcial-block" id="parcial-3">
+<h2 class="parcial-title">Parcial 3 — Redes, SSH y Administraci&oacute;n</h2>
+<p class="parcial-subtitle">Parcial generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p3">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p3')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p3-1" data-correct="b">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Qu&eacute; archivo almacena las contrase&ntilde;as cifradas de los usuarios en Linux?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p3','1','a')">a) /etc/passwd</button>
+    <button class="opcion" data-letter="b" onclick="responder('p3','1','b')">b) /etc/shadow</button>
+    <button class="opcion" data-letter="c" onclick="responder('p3','1','c')">c) /etc/group</button>
+    <button class="opcion" data-letter="d" onclick="responder('p3','1','d')">d) /etc/security</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>/etc/shadow</code> almacena las contrase&ntilde;as cifradas. <code>/etc/passwd</code> contiene info de los usuarios pero ya no guarda las contrase&ntilde;as directamente.</span></div>
+</div>
+
+<div class="pregunta" id="q-p3-2" data-correct="a">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Qu&eacute; comando se usa para crear un nuevo usuario en el sistema?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p3','2','a')">a) useradd</button>
+    <button class="opcion" data-letter="b" onclick="responder('p3','2','b')">b) addgroup</button>
+    <button class="opcion" data-letter="c" onclick="responder('p3','2','c')">c) newuser</button>
+    <button class="opcion" data-letter="d" onclick="responder('p3','2','d')">d) mkuser</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>useradd</code> crea un nuevo usuario. Con <code>-m</code> se crea tambi&eacute;n su directorio home. Tambi&eacute;n existe <code>adduser</code> (m&aacute;s interactivo en Debian/Ubuntu).</span></div>
+</div>
+
+<div class="pregunta" id="q-p3-3" data-correct="c">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Qu&eacute; m&aacute;scara de red corresponde a un prefijo /24?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p3','3','a')">a) 255.255.0.0</button>
+    <button class="opcion" data-letter="b" onclick="responder('p3','3','b')">b) 255.0.0.0</button>
+    <button class="opcion" data-letter="c" onclick="responder('p3','3','c')">c) 255.255.255.0</button>
+    <button class="opcion" data-letter="d" onclick="responder('p3','3','d')">d) 255.255.255.128</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">/24 significa que los primeros 24 bits son de red: 255.255.255.0. Cada octeto de 255 representa 8 bits de red.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-4">
+  <p class="enunciado"><span class="q-num">4.</span> &iquest;Qu&eacute; es DHCP y cu&aacute;l es su funci&oacute;n principal?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-4">DHCP (Dynamic Host Configuration Protocol) es un protocolo que asigna <strong>autom&aacute;ticamente</strong> configuraci&oacute;n de red a los dispositivos: direcci&oacute;n IP, m&aacute;scara de red, gateway y servidor DNS. Evita tener que configurar cada dispositivo manualmente (configuraci&oacute;n est&aacute;tica).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-5">
+  <p class="enunciado"><span class="q-num">5.</span> Explicar la diferencia entre autenticaci&oacute;n SSH por contrase&ntilde;a y por clave p&uacute;blica/privada.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-5"><strong>Por contrase&ntilde;a:</strong> el usuario ingresa su contrase&ntilde;a cada vez que se conecta. Es m&aacute;s simple pero menos segura (vulnerable a fuerza bruta).<br><strong>Por clave p&uacute;blica/privada:</strong> se genera un par de claves. La clave p&uacute;blica se copia al servidor (en <code>~/.ssh/authorized_keys</code>) y la privada queda en el cliente. La autenticaci&oacute;n se hace sin contrase&ntilde;a y es m&aacute;s segura.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-6">
+  <p class="enunciado"><span class="q-num">6.</span> &iquest;Para qu&eacute; sirve el archivo <code>/etc/sudoers</code>? &iquest;C&oacute;mo se debe editar?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-6">El archivo <code>/etc/sudoers</code> define qu&eacute; usuarios o grupos pueden ejecutar comandos con privilegios de root usando <code>sudo</code>. Se debe editar <strong>exclusivamente</strong> con el comando <code>visudo</code>, que valida la sintaxis antes de guardar para evitar errores que dejar&iacute;an el sistema sin acceso a sudo.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;Qu&eacute; informaci&oacute;n contiene cada campo del archivo <code>/etc/passwd</code>? Dar un ejemplo de l&iacute;nea.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-7">Ejemplo: <code>juan:x:1000:1000:Juan Garcia:/home/juan:/bin/bash</code><br>Campos separados por <code>:</code>:<br>1. Username (juan)<br>2. Password (x = est&aacute; en /etc/shadow)<br>3. UID (1000)<br>4. GID (1000)<br>5. Comentario/GECOS (Juan Garcia)<br>6. Home directory (/home/juan)<br>7. Shell (/bin/bash)</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-8">
+  <p class="enunciado"><span class="q-num">8.</span> Dada la red 192.168.1.0/24, &iquest;cu&aacute;l es la direcci&oacute;n de broadcast y cu&aacute;ntos hosts &uacute;tiles se pueden tener?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-8">Para la red 192.168.1.0/24:<br><strong>Broadcast:</strong> 192.168.1.255 (todos los bits de host en 1).<br><strong>Hosts &uacute;tiles:</strong> 254 (2^8 - 2 = 254). Se restan 2 porque la direcci&oacute;n de red (.0) y la de broadcast (.255) no se asignan a hosts.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-9">
+  <p class="enunciado"><span class="q-num">9.</span> &iquest;Qu&eacute; comando se usa para ver la configuraci&oacute;n de red actual de las interfaces? Nombrar al menos dos alternativas.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-9">Se pueden usar:<br><code>ifconfig</code> (tradicional, paquete net-tools)<br><code>ip addr show</code> o <code>ip a</code> (moderno, paquete iproute2)<br>Tambi&eacute;n <code>ip link show</code> para ver el estado de las interfaces sin detalles de IP.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-10">
+  <p class="enunciado"><span class="q-num">10.</span> &iquest;Qu&eacute; diferencia hay entre <code>apt-get install</code> y <code>dpkg -i</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-10"><code>apt-get install</code> descarga e instala paquetes desde los repositorios, <strong>resolviendo dependencias autom&aacute;ticamente</strong>.<br><code>dpkg -i</code> instala un paquete <code>.deb</code> local pero <strong>no resuelve dependencias</strong> &mdash; si faltan, hay que instalarlas manualmente o ejecutar <code>apt-get -f install</code> despu&eacute;s.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-11">
+  <p class="enunciado"><span class="q-num">11.</span> &iquest;Qu&eacute; es el GID de un usuario y c&oacute;mo se puede ver a qu&eacute; grupos pertenece?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-11">El <strong>GID</strong> (Group ID) es el identificador num&eacute;rico del grupo principal de un usuario. Para ver a qu&eacute; grupos pertenece un usuario se usa el comando <code>groups usuario</code> o <code>id usuario</code>, que muestra UID, GID y todos los grupos secundarios.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-12">
+  <p class="enunciado"><span class="q-num">12.</span> Explicar qu&eacute; es SSH y para qu&eacute; se utiliza.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-12">SSH (Secure Shell) es un protocolo de red que permite acceder y administrar equipos de forma remota a trav&eacute;s de una conexi&oacute;n <strong>cifrada</strong>. Se utiliza para: ejecutar comandos en un servidor remoto, transferir archivos (con SCP o SFTP), crear t&uacute;neles seguros, y administrar sistemas sin acceso f&iacute;sico. Usa el puerto 22 por defecto.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p3-13">
+  <p class="enunciado"><span class="q-num">13.</span> &iquest;Qu&eacute; comando se utiliza para eliminar un usuario del sistema y cu&aacute;l es la diferencia al usar la opci&oacute;n <code>-r</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p3-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p3-13">Se utiliza <code>userdel usuario</code> para eliminar un usuario. Sin opciones, solo elimina la cuenta pero <strong>no borra su directorio home</strong>.<br>Con <code>userdel -r usuario</code> se elimina la cuenta <strong>y</strong> su directorio home junto con sus archivos.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p3-14">
+  <p class="enunciado"><span class="q-num">14.</span> El puerto por defecto del servicio SSH es el <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p3-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p3-14', ['22'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p3-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p3-15">
+  <p class="enunciado"><span class="q-num">15.</span> Para agregar un usuario a un grupo sin sacarlo de sus grupos actuales, se usa <code>usermod -aG</code> <span class="completar-blank"></span> usuario.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p3-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p3-15', ['grupo','nombre_grupo','GRUPO'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p3-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p3-16">
+  <p class="enunciado"><span class="q-num">16.</span> El archivo donde se definen los servidores DNS que usa el sistema es <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p3-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p3-16', ['/etc/resolv.conf'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p3-16"></div>
+</div>
+</div>
+
+<!-- ==================== PARCIAL 4 ==================== -->
+<div class="parcial-block" id="parcial-4">
+<h2 class="parcial-title">Parcial 4 — Integrador</h2>
+<p class="parcial-subtitle">Parcial integrador generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p4">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p4')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p4-1" data-correct="d">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Qu&eacute; comando muestra el contenido de un archivo con n&uacute;meros de l&iacute;nea?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p4','1','a')">a) cat</button>
+    <button class="opcion" data-letter="b" onclick="responder('p4','1','b')">b) less</button>
+    <button class="opcion" data-letter="c" onclick="responder('p4','1','c')">c) head</button>
+    <button class="opcion" data-letter="d" onclick="responder('p4','1','d')">d) cat -n</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>cat -n</code> muestra el contenido del archivo con n&uacute;meros de l&iacute;nea. Tambi&eacute;n se puede usar <code>nl</code>.</span></div>
+</div>
+
+<div class="pregunta" id="q-p4-2" data-correct="b">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Cu&aacute;l de estos NO es un tipo de usuario en Linux?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p4','2','a')">a) root</button>
+    <button class="opcion" data-letter="b" onclick="responder('p4','2','b')">b) admin</button>
+    <button class="opcion" data-letter="c" onclick="responder('p4','2','c')">c) usuario regular</button>
+    <button class="opcion" data-letter="d" onclick="responder('p4','2','d')">d) usuario especial (de sistema)</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Los tres tipos de usuarios en Linux son: <strong>root</strong> (superusuario), <strong>usuarios regulares</strong> y <strong>usuarios especiales/de sistema</strong>. &ldquo;admin&rdquo; no es un tipo de usuario est&aacute;ndar.</span></div>
+</div>
+
+<div class="pregunta" id="q-p4-3" data-correct="a">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Qu&eacute; componente del sistema operativo fue creado por Linus Torvalds?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p4','3','a')">a) El kernel Linux</button>
+    <button class="opcion" data-letter="b" onclick="responder('p4','3','b')">b) Las herramientas GNU</button>
+    <button class="opcion" data-letter="c" onclick="responder('p4','3','c')">c) La shell Bash</button>
+    <button class="opcion" data-letter="d" onclick="responder('p4','3','d')">d) El sistema de archivos ext4</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Linus Torvalds cre&oacute; el kernel Linux en 1991. Las herramientas GNU fueron creadas por el proyecto GNU de Richard Stallman.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-4">
+  <p class="enunciado"><span class="q-num">4.</span> Si ten&eacute;s un servidor con SSH habilitado y quer&eacute;s que solo el usuario &ldquo;admin&rdquo; pueda conectarse, &iquest;qu&eacute; archivo editar&iacute;as y qu&eacute; directiva agregar&iacute;as?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-4">Editar&iacute;a <code>/etc/sshd_config</code> (o <code>/etc/ssh/sshd_config</code> seg&uacute;n la distro) y agregar&iacute;a la directiva:<br><code>AllowUsers admin</code><br>Luego reiniciar el servicio con <code>systemctl restart sshd</code> para que tome los cambios. Esta directiva restringe el acceso SSH exclusivamente al usuario indicado.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-5">
+  <p class="enunciado"><span class="q-num">5.</span> Explicar paso a paso c&oacute;mo crear&iacute;as un usuario llamado &ldquo;developer&rdquo; con home directory, shell bash, y que pertenezca al grupo &ldquo;devs&rdquo;.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-5">1. Crear el grupo (si no existe): <code>groupadd devs</code><br>2. Crear el usuario: <code>useradd -m -s /bin/bash -g devs developer</code><br>&nbsp;&nbsp;&nbsp;<code>-m</code>: crea el home directory (/home/developer)<br>&nbsp;&nbsp;&nbsp;<code>-s /bin/bash</code>: asigna bash como shell<br>&nbsp;&nbsp;&nbsp;<code>-g devs</code>: asigna &ldquo;devs&rdquo; como grupo primario<br>3. Asignar contrase&ntilde;a: <code>passwd developer</code></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-6">
+  <p class="enunciado"><span class="q-num">6.</span> &iquest;Qu&eacute; es una expresi&oacute;n regular? Dar un ejemplo de uso con <code>grep</code>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-6">Una expresi&oacute;n regular (regex) es un patr&oacute;n de texto que permite buscar y coincidir cadenas de caracteres de forma flexible usando metacaracteres.<br>Ejemplo: <code>grep "^root" /etc/passwd</code> busca l&iacute;neas que <strong>empiecen</strong> con &ldquo;root&rdquo; en el archivo /etc/passwd. El <code>^</code> es un ancla que indica &ldquo;inicio de l&iacute;nea&rdquo;.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-7">
+  <p class="enunciado"><span class="q-num">7.</span> Describir qu&eacute; es la virtualizaci&oacute;n y nombrar al menos dos tipos de hipervisores, con un ejemplo de cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-7">La virtualizaci&oacute;n permite ejecutar m&uacute;ltiples sistemas operativos en un solo equipo f&iacute;sico mediante software que emula hardware.<br><strong>Hipervisor Tipo 1 (bare-metal):</strong> se instala directamente sobre el hardware. Ejemplo: VMware ESXi, Hyper-V.<br><strong>Hipervisor Tipo 2 (hosted):</strong> se ejecuta sobre un sistema operativo anfitri&oacute;n. Ejemplo: VirtualBox, VMware Workstation.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-8">
+  <p class="enunciado"><span class="q-num">8.</span> &iquest;Qu&eacute; diferencia hay entre la IP privada y la IP p&uacute;blica de un equipo? &iquest;Se puede acceder por SSH a una IP privada desde internet?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-8"><strong>IP privada:</strong> es una direcci&oacute;n v&aacute;lida solo dentro de la red local (rangos 10.x.x.x, 172.16-31.x.x, 192.168.x.x). No es enrutable en internet.<br><strong>IP p&uacute;blica:</strong> es la direcci&oacute;n visible en internet, asignada por el ISP.<br>No se puede acceder directamente por SSH a una IP privada desde internet sin configurar port forwarding (NAT) en el router o usar una VPN.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-9">
+  <p class="enunciado"><span class="q-num">9.</span> &iquest;Qu&eacute; contiene el archivo <code>/etc/apt/sources.list</code> y para qu&eacute; se usa?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-9">El archivo <code>/etc/apt/sources.list</code> contiene la lista de <strong>repositorios</strong> desde donde APT descarga e instala paquetes. Cada l&iacute;nea define un repositorio con su tipo (deb o deb-src), URL, distribuci&oacute;n y componentes. Cuando se ejecuta <code>apt-get update</code>, se consultan estos repositorios para actualizar el &iacute;ndice local de paquetes.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-10">
+  <p class="enunciado"><span class="q-num">10.</span> Explicar qu&eacute; hace el siguiente comando: <code>cat /var/log/syslog | grep -i error | wc -l</code></p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-10">El comando encadena tres operaciones con pipes:<br>1. <code>cat /var/log/syslog</code>: muestra el contenido del archivo de log del sistema.<br>2. <code>grep -i error</code>: filtra solo las l&iacute;neas que contienen &ldquo;error&rdquo; (sin importar may&uacute;sculas/min&uacute;sculas).<br>3. <code>wc -l</code>: cuenta la cantidad de l&iacute;neas resultantes.<br>Resultado: muestra el <strong>n&uacute;mero total de l&iacute;neas</strong> con la palabra &ldquo;error&rdquo; en el syslog.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-11">
+  <p class="enunciado"><span class="q-num">11.</span> &iquest;Qu&eacute; hace la l&iacute;nea <code>%sudo ALL=(ALL:ALL) ALL</code> en el archivo sudoers? Explicar cada parte.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-11"><code>%sudo</code>: se aplica a todos los miembros del <strong>grupo</strong> sudo (el % indica grupo).<br><code>ALL=</code>: desde cualquier host.<br><code>(ALL:ALL)</code>: puede ejecutar como cualquier usuario y cualquier grupo.<br><code>ALL</code> (final): puede ejecutar cualquier comando.<br>En resumen: cualquier miembro del grupo sudo puede ejecutar cualquier comando como cualquier usuario en cualquier host.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-12">
+  <p class="enunciado"><span class="q-num">12.</span> Si tengo la red 10.0.0.0 con m&aacute;scara 255.255.255.0, &iquest;qu&eacute; IP asignar&iacute;as al gateway y por qu&eacute;? &iquest;Qu&eacute; IP NO podr&iacute;as asignar a un host?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-12">Al gateway se le asigna generalmente <strong>10.0.0.1</strong> (primera IP &uacute;til de la red, por convenci&oacute;n).<br>IPs que <strong>no se pueden asignar</strong> a un host:<br>- <strong>10.0.0.0</strong>: es la direcci&oacute;n de red (identifica a la red).<br>- <strong>10.0.0.255</strong>: es la direcci&oacute;n de broadcast (env&iacute;a a todos los hosts de la red).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p4-13">
+  <p class="enunciado"><span class="q-num">13.</span> &iquest;Qu&eacute; es la licencia GPL y por qu&eacute; es importante en el contexto de GNU/Linux?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p4-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p4-13">La GPL (General Public License) es una licencia de software libre creada por la Free Software Foundation. Garantiza cuatro libertades: usar, estudiar, modificar y distribuir el software. Su caracter&iacute;stica principal es el <strong>copyleft</strong>: cualquier trabajo derivado debe mantener la misma licencia GPL. Es fundamental en GNU/Linux porque asegura que el sistema operativo y sus componentes permanezcan libres y abiertos.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p4-14">
+  <p class="enunciado"><span class="q-num">14.</span> El comando para generar un par de claves SSH es <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p4-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p4-14', ['ssh-keygen'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p4-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p4-15">
+  <p class="enunciado"><span class="q-num">15.</span> El directorio <span class="completar-blank"></span> almacena los binarios esenciales del sistema disponibles para todos los usuarios.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p4-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p4-15', ['/bin','/usr/bin'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p4-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p4-16">
+  <p class="enunciado"><span class="q-num">16.</span> Para redirigir la salida de error (stderr) a un archivo, se usa <span class="completar-blank"></span> archivo.txt.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p4-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p4-16', ['2>','2 >'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p4-16"></div>
+</div>
+</div>
+
+  </div>
+</section>
+
   </main>
 </div>
 <script>
@@ -12380,7 +13031,8 @@ function responder(apunteId, qNum, letra) {
 }
 
 function updateScore(apunteId) {
-  const sec = document.getElementById('sec-' + apunteId);
+  var sec = document.getElementById('sec-' + apunteId);
+  if (!sec && apunteId.startsWith('p')) sec = document.getElementById('parcial-' + apunteId.slice(1));
   if (!sec) return;
   const all = sec.querySelectorAll('.pregunta');
   const answered = sec.querySelectorAll('.pregunta[data-answered]');
@@ -12423,6 +13075,72 @@ function filterNav(q) {
 
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('open');
+}
+
+function toggleRespuesta(id) {
+  const el = document.getElementById('resp-' + id);
+  if (!el) return;
+  el.classList.toggle('visible');
+  const btn = el.previousElementSibling;
+  if (btn && btn.classList.contains('btn-revelar')) {
+    btn.textContent = el.classList.contains('visible') ? 'Ocultar respuesta' : 'Ver respuesta modelo';
+  }
+}
+
+function verificarCompletar(id, respuestas) {
+  const input = document.getElementById('input-' + id);
+  const fb = document.getElementById('cf-' + id);
+  if (!input || !fb) return;
+  const val = input.value.trim().toLowerCase();
+  const ok = respuestas.some(r => r.toLowerCase() === val);
+  input.classList.remove('input-correct', 'input-wrong');
+  fb.classList.remove('cf-correct', 'cf-wrong');
+  if (val === '') {
+    fb.textContent = 'Escribi una respuesta primero.';
+    fb.classList.add('cf-wrong');
+    return;
+  }
+  if (ok) {
+    input.classList.add('input-correct');
+    fb.textContent = 'Correcto!';
+    fb.classList.add('cf-correct');
+  } else {
+    input.classList.add('input-wrong');
+    fb.textContent = 'Incorrecto. Respuestas aceptadas: ' + respuestas.join(', ');
+    fb.classList.add('cf-wrong');
+  }
+}
+
+function resetParcial(parcialId) {
+  const block = document.getElementById('parcial-' + parcialId.replace('p',''));
+  if (!block) return;
+  block.querySelectorAll('.pregunta').forEach(function(p) {
+    delete p.dataset.answered;
+    p.classList.remove('answered');
+    p.querySelectorAll('.opcion').forEach(function(b) {
+      b.disabled = false;
+      b.classList.remove('correct', 'wrong');
+    });
+    var fb = p.querySelector('.feedback');
+    if (fb) fb.classList.add('hidden');
+  });
+  block.querySelectorAll('.respuesta-modelo').forEach(function(r) {
+    r.classList.remove('visible');
+  });
+  block.querySelectorAll('.btn-revelar').forEach(function(b) {
+    b.textContent = 'Ver respuesta modelo';
+  });
+  block.querySelectorAll('.completar-input').forEach(function(i) {
+    i.value = '';
+    i.classList.remove('input-correct', 'input-wrong');
+  });
+  block.querySelectorAll('.completar-feedback').forEach(function(f) {
+    f.classList.remove('cf-correct', 'cf-wrong');
+    f.textContent = '';
+    f.style.display = 'none';
+  });
+  var badge = document.getElementById('score-' + parcialId);
+  if (badge) badge.textContent = '0 / 16';
 }
 
 </script>
