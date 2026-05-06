@@ -13093,20 +13093,22 @@ function verificarCompletar(id, respuestas) {
   if (!input || !fb) return;
   const val = input.value.trim().toLowerCase();
   const ok = respuestas.some(r => r.toLowerCase() === val);
+  const esperadas = respuestas.join(', ');
+  const etiqueta = respuestas.length > 1 ? 'Respuestas aceptadas: ' : 'Respuesta esperada: ';
   input.classList.remove('input-correct', 'input-wrong');
   fb.classList.remove('cf-correct', 'cf-wrong');
   if (val === '') {
-    fb.textContent = 'Escribi una respuesta primero.';
+    fb.textContent = 'Escribi una respuesta primero. ' + etiqueta + esperadas;
     fb.classList.add('cf-wrong');
     return;
   }
   if (ok) {
     input.classList.add('input-correct');
-    fb.textContent = 'Correcto!';
+    fb.textContent = 'Correcto! ' + etiqueta + esperadas;
     fb.classList.add('cf-correct');
   } else {
     input.classList.add('input-wrong');
-    fb.textContent = 'Incorrecto. Respuestas aceptadas: ' + respuestas.join(', ');
+    fb.textContent = 'Incorrecto. ' + etiqueta + esperadas;
     fb.classList.add('cf-wrong');
   }
 }
