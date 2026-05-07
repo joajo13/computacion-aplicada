@@ -814,7 +814,7 @@ body {
 
 <section id="sec-indice" class="section active">
   <h1>Computación Aplicada</h1>
-  <p class="subtitle">16 apuntes · 480 preguntas de multiple choice · 4 parciales de pr&aacute;ctica</p>
+  <p class="subtitle">16 apuntes · 480 preguntas de multiple choice · 8 parciales de pr&aacute;ctica</p>
   <table class="indice-table">
     <thead><tr><th>Apunte</th><th>Preguntas</th></tr></thead>
     <tbody>
@@ -884,7 +884,7 @@ body {
 </tr>
 <tr>
   <td><a class="link-apunte" onclick="showSection('parciales')">Parciales de pr&aacute;ctica</a></td>
-  <td><span class="badge-q">4 parciales</span></td>
+  <td><span class="badge-q">8 parciales</span></td>
 </tr></tbody>
   </table>
 </section>
@@ -12672,7 +12672,7 @@ Enter file in which to save the key (/root/.ssh/id_rsa):
     <h1>Parciales de pr&aacute;ctica</h1>
   </div>
   <div class="resumen-container">
-    <p>4 parciales con 16 preguntas cada uno (6.25 pts c/u). Mismo formato que el examen real: multiple choice, desarrollo y completar.</p>
+    <p>8 parciales con 16 preguntas cada uno (6.25 pts c/u). Mismo formato que el examen real: multiple choice, desarrollo y completar.</p>
 
 <!-- ==================== PARCIAL 1 ==================== -->
 <div class="parcial-block" id="parcial-1">
@@ -13194,6 +13194,526 @@ Enter file in which to save the key (/root/.ssh/id_rsa):
 </div>
 </div>
 
+<!-- ==================== PARCIAL 5 ==================== -->
+<div class="parcial-block" id="parcial-5">
+<h2 class="parcial-title">Parcial 5 — Historia, GNU/Linux y Virtualizaci&oacute;n</h2>
+<p class="parcial-subtitle">Parcial generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p5">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p5')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p5-1" data-correct="b">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;En qu&eacute; a&ntilde;o anunci&oacute; Stallman la creaci&oacute;n del proyecto GNU?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p5','1','a')">a) 1971</button>
+    <button class="opcion" data-letter="b" onclick="responder('p5','1','b')">b) 1983</button>
+    <button class="opcion" data-letter="c" onclick="responder('p5','1','c')">c) 1991</button>
+    <button class="opcion" data-letter="d" onclick="responder('p5','1','d')">d) 1975</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Stallman anunci&oacute; el proyecto GNU en 1983. 1971 es Unix, 1991 es Linux y 1975 es la distribuci&oacute;n de Unix a universidades.</span></div>
+</div>
+
+<div class="pregunta" id="q-p5-2" data-correct="d">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Cu&aacute;l de los siguientes es un hipervisor de Tipo 1 (BareMetal)?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p5','2','a')">a) VirtualBox</button>
+    <button class="opcion" data-letter="b" onclick="responder('p5','2','b')">b) VMware Workstation</button>
+    <button class="opcion" data-letter="c" onclick="responder('p5','2','c')">c) UTM</button>
+    <button class="opcion" data-letter="d" onclick="responder('p5','2','d')">d) VMware ESXi</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">VMware ESXi es Tipo 1 (BareMetal). VirtualBox, VMware Workstation y UTM son Tipo 2 (Hosted).</span></div>
+</div>
+
+<div class="pregunta" id="q-p5-3" data-correct="c">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Qu&eacute; significa el acr&oacute;nimo GNU?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p5','3','a')">a) General Network Unix</button>
+    <button class="opcion" data-letter="b" onclick="responder('p5','3','b')">b) GNU New Unix</button>
+    <button class="opcion" data-letter="c" onclick="responder('p5','3','c')">c) GNU&#39;s Not Unix</button>
+    <button class="opcion" data-letter="d" onclick="responder('p5','3','d')">d) Global Network Utilities</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">GNU es un acr&oacute;nimo recursivo: <em>GNU&#39;s Not Unix</em>. Indica que el sistema se inspiraba en Unix pero no estaba basado en &eacute;l.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-4">
+  <p class="enunciado"><span class="q-num">4.</span> Definir, con palabras propias, qu&eacute; es la <em>virtualizaci&oacute;n</em> y nombrar al menos tres componentes f&iacute;sicos que pueden virtualizarse.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-4">La virtualizaci&oacute;n es la tecnolog&iacute;a que permite ejecutar m&uacute;ltiples sistemas operativos y aplicaciones en el mismo hardware f&iacute;sico de manera eficiente. El software de virtualizaci&oacute;n imita las funciones del hardware f&iacute;sico recreando sus componentes y convirti&eacute;ndolos en l&oacute;gicos. Componentes que se pueden virtualizar: <strong>disco r&iacute;gido, red (placa de red), CPU, video</strong>, entre otros perif&eacute;ricos.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-5">
+  <p class="enunciado"><span class="q-num">5.</span> Explicar la diferencia entre un hipervisor de <strong>Tipo 1 (BareMetal)</strong> y uno de <strong>Tipo 2 (Hosted)</strong>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-5">El <strong>Tipo 1 (BareMetal)</strong> corre el sistema operativo de virtualizaci&oacute;n directamente sobre el hardware f&iacute;sico, sin un sistema operativo intermedio. Las VMs tienen acceso directo al hardware. Tiene mayor rendimiento. Ejemplos: VMware ESXi, Proxmox, KVM, Hyper-V, Xen.<br>El <strong>Tipo 2 (Hosted)</strong> corre sobre un sistema operativo est&aacute;ndar (Windows, GNU/Linux, macOS) como una aplicaci&oacute;n m&aacute;s. Tiene menor rendimiento por la capa intermedia del SO host. Es m&aacute;s f&aacute;cil de instalar. Ejemplos: VirtualBox, VMware Workstation, Parallels Desktop, UTM, QEMU.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-6">
+  <p class="enunciado"><span class="q-num">6.</span> &iquest;Qui&eacute;n cre&oacute; Unix, en qu&eacute; a&ntilde;o y en qu&eacute; organizaci&oacute;n trabajaba?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-6"><strong>Ken Thompson</strong>, ingeniero de <strong>Bell Labs</strong>, cre&oacute; Unix en <strong>1971</strong>. Aprovech&oacute; los conceptos del proyecto Multics (que Bell Labs hab&iacute;a abandonado en 1969 por ser complejo y costoso) para crear un sistema m&aacute;s simple y eficiente. Unix se hizo popular entre acad&eacute;micos y desarrolladores por su portabilidad, pero con el tiempo se convirti&oacute; en un sistema propietario controlado por AT&amp;T (due&ntilde;a de Bell Labs).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;Qu&eacute; son las extensiones <strong>IVT</strong> y <strong>AMD-V</strong>, y para qu&eacute; sirven?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-7">Son extensiones de virtualizaci&oacute;n incluidas por los fabricantes de microprocesadores en sus chips:<br><strong>IVT</strong> (<em>Intel Virtualization Technology</em>): la extensi&oacute;n de Intel.<br><strong>AMD-V</strong> (<em>AMD Virtualization</em>): la extensi&oacute;n equivalente de AMD.<br>Estas extensiones permiten un uso eficiente de los procesadores y la generaci&oacute;n de entornos emulados con buen rendimiento. Gracias a ellas, VMware pudo desarrollar los primeros hipervisores modernos a fines de los a&ntilde;os 90.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-8">
+  <p class="enunciado"><span class="q-num">8.</span> Definir la <em>licencia GPL</em> y explicar por qu&eacute; es importante para GNU/Linux.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-8">La <strong>GPL</strong> (<em>Licencia P&uacute;blica General de GNU</em>) fue escrita por Richard Stallman. Garantiza que cualquier software publicado bajo ella siga siendo libre y disponible para modificaci&oacute;n y distribuci&oacute;n, incluso si alguien lo modifica o redistribuye. Es importante para GNU/Linux porque tanto las herramientas GNU como el kernel de Linux fueron liberados bajo GPL, lo que permiti&oacute; que la comunidad global de desarrolladores pudiera colaborar libremente y mantener al sistema operativo libre y abierto.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-9">
+  <p class="enunciado"><span class="q-num">9.</span> &iquest;Qu&eacute; es el <em>kernel</em> y qu&eacute; tipos de solicitudes maneja?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-9">El kernel es un conjunto de programas con control completo sobre el sistema, que facilita las interacciones entre los componentes de hardware y software. Es uno de los primeros programas en cargarse cuando arranca la computadora. Maneja solicitudes de <strong>memoria</strong> y de <strong>perif&eacute;ricos</strong> como teclados, monitores e impresoras.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-10">
+  <p class="enunciado"><span class="q-num">10.</span> Explicar la diferencia entre <strong>escalar horizontalmente</strong> y <strong>escalar verticalmente</strong> una infraestructura virtualizada.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-10"><strong>Escalar horizontalmente:</strong> agregar m&aacute;s instancias de m&aacute;quinas virtuales al entorno (m&aacute;s VMs).<br><strong>Escalar verticalmente:</strong> aumentar los recursos de una m&aacute;quina virtual existente (m&aacute;s CPU, m&aacute;s RAM, m&aacute;s disco).<br>Ambas formas son posibles en la medida que el hardware f&iacute;sico lo permita, y la flexibilidad para hacerlo es una ventaja clave de la virtualizaci&oacute;n.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-11">
+  <p class="enunciado"><span class="q-num">11.</span> &iquest;Qu&eacute; sistema operativo us&oacute; Linus Torvalds antes de crear Linux y por qu&eacute; decidi&oacute; desarrollar su propio kernel?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-11">Torvalds usaba <strong>Minix</strong>, una variante de Unix creada por Andrew Tenenbaum con fines educativos. Hab&iacute;a comprado una IBM PC con procesador Intel 80386 y quer&iacute;a usarla con un sistema operativo tipo Unix, pero Minix le resultaba demasiado limitado. Por eso decidi&oacute; crear su propio kernel para aprovechar mejor el hardware. El 25 de agosto de 1991 public&oacute; el famoso mensaje en Usenet anunciando su proyecto.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-12">
+  <p class="enunciado"><span class="q-num">12.</span> &iquest;Qu&eacute; es un <em>mainframe</em> y cu&aacute;l fue el primer modelo de IBM con capacidad de virtualizaci&oacute;n?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-12">Un mainframe es un tipo de computadora dise&ntilde;ada por IBM, orientada al procesamiento de datos masivos. Algunos bancos en Argentina a&uacute;n los siguen usando. Fue dise&ntilde;ado para que m&uacute;ltiples usuarios tuvieran acceso a una parte del sistema, simulando un sistema operativo para cada uno de ellos. El primer modelo con capacidad de virtualizaci&oacute;n fue el <strong>IBM S/360 Modelo 67</strong>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p5-13">
+  <p class="enunciado"><span class="q-num">13.</span> &iquest;Qu&eacute; es el <em>hardware host</em> y qu&eacute; es el <em>hardware guest</em> en virtualizaci&oacute;n?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p5-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p5-13">El <strong>hardware host</strong> es el hardware f&iacute;sico real donde corre el hipervisor &mdash; la m&aacute;quina anfitriona.<br>El <strong>hardware guest</strong> son los recursos de hardware que &ldquo;ve&rdquo; la m&aacute;quina virtual, es decir, los recursos virtualizados que el hipervisor le presenta a la VM. Los recursos del guest dependen siempre de lo que el host le permite asignar.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p5-14">
+  <p class="enunciado"><span class="q-num">14.</span> El primer shell creado para Unix fue <span class="completar-blank"></span>, dise&ntilde;ado por Stephen Bourne en los a&ntilde;os 70.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p5-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p5-14', ['sh','Bourne Shell','bourne shell','sh (Bourne Shell)'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p5-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p5-15">
+  <p class="enunciado"><span class="q-num">15.</span> El kernel-based virtual machine de Linux, integrado directamente en el kernel y considerado un hipervisor Tipo 1, se llama <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p5-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p5-15', ['KVM','kvm'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p5-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p5-16">
+  <p class="enunciado"><span class="q-num">16.</span> El sistema operativo de tiempo compartido desarrollado en los a&ntilde;os 60 por MIT, General Electric y Bell Labs se llamaba <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p5-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p5-16', ['Multics','multics'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p5-16"></div>
+</div>
+</div>
+
+<!-- ==================== PARCIAL 6 ==================== -->
+<div class="parcial-block" id="parcial-6">
+<h2 class="parcial-title">Parcial 6 — Shell, Comandos y Editores de Texto</h2>
+<p class="parcial-subtitle">Parcial generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p6">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p6')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p6-1" data-correct="b">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Cu&aacute;l es el shell predeterminado en la mayor&iacute;a de las distribuciones GNU/Linux (incluida Debian)?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p6','1','a')">a) Zsh</button>
+    <button class="opcion" data-letter="b" onclick="responder('p6','1','b')">b) Bash</button>
+    <button class="opcion" data-letter="c" onclick="responder('p6','1','c')">c) Csh</button>
+    <button class="opcion" data-letter="d" onclick="responder('p6','1','d')">d) Ksh</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Bash es el shell m&aacute;s com&uacute;n en GNU/Linux y viene predeterminado en Debian. Es la evoluci&oacute;n de sh.</span></div>
+</div>
+
+<div class="pregunta" id="q-p6-2" data-correct="c">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Cu&aacute;ntos modos de uso tiene VIM?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p6','2','a')">a) 1</button>
+    <button class="opcion" data-letter="b" onclick="responder('p6','2','b')">b) 2</button>
+    <button class="opcion" data-letter="c" onclick="responder('p6','2','c')">c) 3</button>
+    <button class="opcion" data-letter="d" onclick="responder('p6','2','d')">d) 4</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">VIM tiene 3 modos: <em>Modo Comando</em>, <em>Modo Escritura</em> (inserci&oacute;n) y <em>Modo EX</em> (&uacute;ltima l&iacute;nea).</span></div>
+</div>
+
+<div class="pregunta" id="q-p6-3" data-correct="b">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Cu&aacute;l es la sintaxis general de un comando en GNU/Linux?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p6','3','a')">a) [opciones] comando [argumentos]</button>
+    <button class="opcion" data-letter="b" onclick="responder('p6','3','b')">b) comando [opciones] [argumentos]</button>
+    <button class="opcion" data-letter="c" onclick="responder('p6','3','c')">c) comando [argumentos] [opciones]</button>
+    <button class="opcion" data-letter="d" onclick="responder('p6','3','d')">d) [argumentos] [opciones] comando</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">El orden est&aacute;ndar es <code>comando [opciones] [argumentos]</code>. Primero el comando, luego los flags, finalmente lo que opera.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-4">
+  <p class="enunciado"><span class="q-num">4.</span> Explicar qu&eacute; es el <em>shell</em> y nombrar al menos tres shells distintos junto con una caracter&iacute;stica de cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-4">El shell es el programa que interpreta los comandos que el usuario escribe en la terminal. Act&uacute;a como intermediario entre el usuario y el sistema operativo.<br><strong>sh (Bourne Shell):</strong> primer shell de Unix, creado por Stephen Bourne en los a&ntilde;os 70. Base de los dem&aacute;s.<br><strong>Bash (Bourne Again Shell):</strong> evoluci&oacute;n de sh, el m&aacute;s com&uacute;n y predeterminado en Linux.<br><strong>Zsh (Z Shell):</strong> uno de los m&aacute;s potentes y flexibles, basado en sh, con caracter&iacute;sticas avanzadas.<br><strong>Csh (C Shell):</strong> de Bill Joy, basado en la sintaxis del lenguaje C.<br><strong>Ksh (Korn Shell):</strong> evoluci&oacute;n de Csh que combina sh y csh.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-5">
+  <p class="enunciado"><span class="q-num">5.</span> Describir los <strong>3 modos de VIM</strong> y c&oacute;mo se transita entre ellos.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-5"><strong>Modo Comando:</strong> es el modo por defecto al abrir VIM. Las teclas ejecutan acciones (mover el cursor, copiar, pegar, borrar). No escriben texto.<br><strong>Modo Escritura (inserci&oacute;n):</strong> se entra desde Modo Comando presionando <code>i</code>. Permite escribir texto normalmente. Para volver a Modo Comando se presiona <code>Esc</code>.<br><strong>Modo EX (&uacute;ltima l&iacute;nea):</strong> se entra desde Modo Comando presionando <code>:</code>. El cursor se va al final de la pantalla y se pueden escribir comandos m&aacute;s complejos como <code>:w</code> (guardar), <code>:q</code> (salir), <code>:wq</code> (guardar y salir).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-6">
+  <p class="enunciado"><span class="q-num">6.</span> Explicar para qu&eacute; sirven los comandos <code>man</code>, <code>whatis</code> y <code>whereis</code>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-6"><code>man</code>: muestra el manual completo de un comando, con todas sus opciones y combinaciones. Por ejemplo <code>man ls</code>.<br><code>whatis</code>: da una descripci&oacute;n breve de una sola l&iacute;nea sobre qu&eacute; hace un comando. Es la versi&oacute;n &ldquo;ultra-resumida&rdquo; de man.<br><code>whereis</code>: indica d&oacute;nde est&aacute; instalado el ejecutable (binario) del comando en el sistema de archivos.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;Qu&eacute; diferencia hay entre <code>cp</code>, <code>mv</code> y <code>rm</code>? Mencionar para qu&eacute; sirve la opci&oacute;n <code>-r</code>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-7"><code>cp</code>: copia archivos o directorios, dejando intacto el original.<br><code>mv</code>: mueve o renombra archivos/directorios. Si el destino es una carpeta, mueve; si es un nuevo nombre, renombra.<br><code>rm</code>: elimina archivos. No tiene papelera de reciclaje &mdash; el borrado es permanente.<br>La opci&oacute;n <code>-r</code> (recursivo) se usa con <code>cp</code> para copiar directorios completos con su contenido y con <code>rm</code> para borrar directorios con todo su contenido. <code>rm -rf</code> es especialmente peligroso porque fuerza la eliminaci&oacute;n sin preguntar.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-8">
+  <p class="enunciado"><span class="q-num">8.</span> Explicar qu&eacute; significa que Linux sea <em>case-sensitive</em> y para qu&eacute; sirve la funci&oacute;n de <em>autocompletado con Tab</em>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-8"><strong>Case-sensitive:</strong> Linux distingue entre may&uacute;sculas y min&uacute;sculas. <code>ARCHIVO</code>, <code>Archivo</code> y <code>archivo</code> son tres archivos distintos. Lo mismo para los comandos: <code>ls</code> funciona pero <code>LS</code> da error.<br><strong>Autocompletado con Tab:</strong> si escrib&iacute;s parte de un comando o nombre de archivo y apret&aacute;s la tecla <code>Tab</code>, el sistema intenta completarlo solo. Es muy &uacute;til para evitar errores de tipeo y mientras se memorizan los comandos.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-9">
+  <p class="enunciado"><span class="q-num">9.</span> Mencionar al menos cinco comandos de VIM en Modo Comando con su funci&oacute;n.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-9"><code>x</code>: borra el car&aacute;cter bajo el cursor.<br><code>dd</code>: borra (y corta) la l&iacute;nea actual.<br><code>yy</code>: copia la l&iacute;nea actual.<br><code>5yy</code>: copia las siguientes 5 l&iacute;neas. <code>5dd</code>: corta las siguientes 5 l&iacute;neas.<br><code>p</code>: pega la l&iacute;nea copiada/cortada debajo del cursor.<br><code>P</code>: pega sobre el cursor.<br><code>u</code>: deshace el &uacute;ltimo cambio.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-10">
+  <p class="enunciado"><span class="q-num">10.</span> &iquest;Qu&eacute; es un <em>editor de texto</em> y por qu&eacute; es importante en GNU/Linux? Mencionar al menos tres editores.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-10">Un editor de texto es una herramienta que corre en la terminal y permite a los usuarios crear, ver y modificar archivos de <strong>texto plano</strong>, sin formato especial ni metadatos. Es importante en Linux porque muchos archivos de configuraci&oacute;n y scripts se manejan en texto plano.<br>Editores: <strong>Pico</strong> (parte del cliente de correo Pine, minimalista), <strong>Nano</strong> (clon de Pico, preinstalado en muchas distros), <strong>Emacs</strong> (de Stallman, muy poderoso y extensible), <strong>VI</strong> (de Bill Joy, 1976, est&aacute;ndar en Unix/Linux), <strong>VIM</strong> (de Bram Moolenaar, 1991, versi&oacute;n mejorada de VI).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-11">
+  <p class="enunciado"><span class="q-num">11.</span> &iquest;Qu&eacute; diferencia hay entre <code>mkdir</code> y <code>mkdir -p</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-11"><code>mkdir documentos</code> crea un &uacute;nico directorio. Si alguno de los directorios padres no existe, da error.<br><code>mkdir -p directorio1/directorio2/directorio3</code> crea toda la cadena de directorios anidados de una sola vez, aunque los intermedios no existan. La opci&oacute;n <code>-p</code> es muy &uacute;til para construir estructuras profundas en un solo comando.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-12">
+  <p class="enunciado"><span class="q-num">12.</span> &iquest;Qu&eacute; hace el comando <code>shutdown</code> y cu&aacute;l es la diferencia entre <code>-r</code> y <code>-h</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-12"><code>shutdown</code> apaga o reinicia el sistema.<br><code>-r</code>: <em>reboot</em> &mdash; reinicia el sistema. Ej: <code>shutdown -r now</code> reinicia inmediatamente.<br><code>-h</code>: <em>halt</em> &mdash; apaga el sistema. Ej: <code>shutdown -h now</code> apaga inmediatamente.<br>El par&aacute;metro <code>now</code> indica que se ejecute en el momento; tambi&eacute;n se puede usar <code>+5</code> para programar la acci&oacute;n en 5 minutos.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p6-13">
+  <p class="enunciado"><span class="q-num">13.</span> Explicar la diferencia entre la <strong>CLI</strong> y la <strong>GUI</strong> y por qu&eacute; la CLI es preferida por administradores de sistemas.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p6-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p6-13">La <strong>CLI</strong> (<em>Command Line Interface</em>) es una interfaz de l&iacute;nea de comandos donde el usuario escribe comandos de texto. La <strong>GUI</strong> (<em>Graphic User Interface</em>) es una interfaz gr&aacute;fica con ventanas, &iacute;conos y mouse. Aunque la GUI permite realizar muchas de las tareas que se hacen por CLI, la CLI le da al administrador de sistemas mayor <strong>flexibilidad y rapidez</strong>, especialmente para automatizar procesos, trabajar en servidores remotos sin interfaz gr&aacute;fica y realizar tareas masivas con scripts.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p6-14">
+  <p class="enunciado"><span class="q-num">14.</span> Para guardar y salir de un archivo en VIM (estando en Modo Comando) se escribe <span class="completar-blank"></span> y luego Enter.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p6-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p6-14', [':wq',':x',':wq!'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p6-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p6-15">
+  <p class="enunciado"><span class="q-num">15.</span> El comando <span class="completar-blank"></span> muestra el directorio actual en el que estamos trabajando.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p6-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p6-15', ['pwd'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p6-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p6-16">
+  <p class="enunciado"><span class="q-num">16.</span> El comando que crea un archivo vac&iacute;o (o actualiza la fecha de modificaci&oacute;n de uno existente) es <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p6-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p6-16', ['touch'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p6-16"></div>
+</div>
+</div>
+
+<!-- ==================== PARCIAL 7 ==================== -->
+<div class="parcial-block" id="parcial-7">
+<h2 class="parcial-title">Parcial 7 — Streams, Redirecciones, Filtros y Regex</h2>
+<p class="parcial-subtitle">Parcial generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p7">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p7')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p7-1" data-correct="b">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Cu&aacute;ntos streams predefinidos tiene Linux para cada proceso?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p7','1','a')">a) 2</button>
+    <button class="opcion" data-letter="b" onclick="responder('p7','1','b')">b) 3</button>
+    <button class="opcion" data-letter="c" onclick="responder('p7','1','c')">c) 4</button>
+    <button class="opcion" data-letter="d" onclick="responder('p7','1','d')">d) 5</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Linux tiene tres streams predefinidos: stdin (0), stdout (1) y stderr (2).</span></div>
+</div>
+
+<div class="pregunta" id="q-p7-2" data-correct="c">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Cu&aacute;l es el operador de regex equivalente a &ldquo;una o m&aacute;s repeticiones&rdquo;?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p7','2','a')">a) <code>*</code></button>
+    <button class="opcion" data-letter="b" onclick="responder('p7','2','b')">b) <code>?</code></button>
+    <button class="opcion" data-letter="c" onclick="responder('p7','2','c')">c) <code>+</code></button>
+    <button class="opcion" data-letter="d" onclick="responder('p7','2','d')">d) <code>{0,}</code></button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">El cuantificador <code>+</code> indica una o m&aacute;s repeticiones. <code>*</code> es cero o m&aacute;s, <code>?</code> es cero o una.</span></div>
+</div>
+
+<div class="pregunta" id="q-p7-3" data-correct="d">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Cu&aacute;l de los siguientes comandos descarta la salida de errores?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p7','3','a')">a) <code>comando &gt; archivo.txt</code></button>
+    <button class="opcion" data-letter="b" onclick="responder('p7','3','b')">b) <code>comando 1&gt; archivo.txt</code></button>
+    <button class="opcion" data-letter="c" onclick="responder('p7','3','c')">c) <code>comando &lt; archivo.txt</code></button>
+    <button class="opcion" data-letter="d" onclick="responder('p7','3','d')">d) <code>comando 2&gt; /dev/null</code></button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text"><code>2&gt; /dev/null</code> redirige el stderr (canal 2) al &ldquo;agujero negro&rdquo; del sistema, descartando los errores.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-4">
+  <p class="enunciado"><span class="q-num">4.</span> &iquest;Qu&eacute; son <strong>stdin</strong>, <strong>stdout</strong> y <strong>stderr</strong>? Indicar el n&uacute;mero asignado y el dispositivo por defecto de cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-4">Son los tres streams predefinidos en Linux:<br><strong>stdin</strong> (Standard Input) &mdash; canal <strong>0</strong>. Por defecto recibe la informaci&oacute;n desde el <strong>teclado</strong>.<br><strong>stdout</strong> (Standard Output) &mdash; canal <strong>1</strong>. Por defecto la salida va al <strong>monitor</strong> (pantalla).<br><strong>stderr</strong> (Standard Error) &mdash; canal <strong>2</strong>. Es el flujo separado para mensajes de error, por defecto va al monitor pero independiente de stdout.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-5">
+  <p class="enunciado"><span class="q-num">5.</span> Explicar la diferencia entre los operadores de redirecci&oacute;n <code>&gt;</code> y <code>&gt;&gt;</code>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-5"><code>&gt;</code> redirige stdout a un archivo. Si el archivo no existe se crea; si ya existe, es <strong>eliminado y vuelto a generar</strong> con el nuevo contenido (sobreescribe).<br><code>&gt;&gt;</code> redirige stdout a un archivo agregando el contenido <strong>al final</strong> del archivo existente (append). Si no existe, lo crea. No borra lo anterior. Es ideal para logs y registros acumulativos.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-6">
+  <p class="enunciado"><span class="q-num">6.</span> Explicar qu&eacute; hace el comando <code>ls /directorio_nuevo &gt; salida.txt 2&gt; error.log</code>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-6">Ejecuta <code>ls /directorio_nuevo</code> y al mismo tiempo:<br><code>&gt; salida.txt</code>: redirige el <strong>stdout</strong> (la salida normal) al archivo <code>salida.txt</code>, sobreescribiendo el archivo si ya exist&iacute;a.<br><code>2&gt; error.log</code>: redirige el <strong>stderr</strong> (canal 2, errores) al archivo <code>error.log</code>.<br>De esta forma, la salida normal y los errores se guardan en archivos separados.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;Qu&eacute; es un <em>pipe</em> y qu&eacute; hace el comando <code>cat /var/log/dpkg.log | grep "installed"</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-7">El pipe (<code>|</code>) permite enviar el stdout de un comando como stdin del siguiente, encadenando comandos.<br>El comando <code>cat /var/log/dpkg.log | grep "installed"</code> hace dos cosas:<br>1) <code>cat</code> muestra el contenido completo del archivo dpkg.log.<br>2) Esa salida se pasa por pipe a <code>grep "installed"</code>, que filtra y muestra <strong>solo las l&iacute;neas que contienen la palabra &ldquo;installed&rdquo;</strong>. Resultado: las entradas del log que registran instalaciones de paquetes.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-8">
+  <p class="enunciado"><span class="q-num">8.</span> Comparar los comandos <code>find</code> y <code>locate</code> indicando ventajas y desventajas de cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-8"><strong>find:</strong> b&uacute;squeda exhaustiva en tiempo real sobre el sistema de archivos. Permite buscar por nombre, tipo, tama&ntilde;o, fecha, permisos, etc., y ejecutar acciones (con <code>-exec</code> o <code>-delete</code>). Su desventaja es que es m&aacute;s lento porque recorre el sistema cada vez.<br><strong>locate:</strong> usa una base de datos previamente indexada (de <code>mlocate</code>) y es mucho m&aacute;s r&aacute;pido. Su desventaja es que la base de datos puede estar desactualizada (hay que ejecutar <code>updatedb</code> para mantenerla al d&iacute;a) y generalmente <code>mlocate</code> no viene instalado por defecto.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-9">
+  <p class="enunciado"><span class="q-num">9.</span> &iquest;Qu&eacute; hace cada uno de los cuantificadores de regex: <code>*</code>, <code>+</code>, <code>?</code>, <code>{n}</code>, <code>{n,m}</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-9"><code>*</code>: cero o m&aacute;s repeticiones del elemento anterior.<br><code>+</code>: una o m&aacute;s repeticiones del elemento anterior.<br><code>?</code>: cero o una repetici&oacute;n del elemento anterior (lo hace opcional).<br><code>{n}</code>: exactamente <em>n</em> veces.<br><code>{n,m}</code>: m&iacute;nimo <em>n</em> y m&aacute;ximo <em>m</em> veces.<br>Ejemplo: <code>/ab+c/</code> coincide con <code>abc</code>, <code>abbc</code>, <code>abbbc</code>, pero no con <code>ac</code> (porque el <code>+</code> exige al menos una <code>b</code>).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-10">
+  <p class="enunciado"><span class="q-num">10.</span> &iquest;Qu&eacute; significan en regex los caracteres especiales <code>.</code>, <code>^</code> y <code>$</code> (fuera de corchetes)?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-10"><code>.</code> (punto): coincide con <strong>cualquier car&aacute;cter</strong>, excepto una nueva l&iacute;nea.<br><code>^</code> (circunflejo): coincide con el <strong>inicio de la l&iacute;nea</strong> (fuera de corchetes; dentro de <code>[]</code> niega).<br><code>$</code> (signo pesos): coincide con el <strong>final de la l&iacute;nea</strong>.<br>Ejemplo: <code>cat Gerencias | grep -E s$</code> encuentra todas las l&iacute;neas que terminan con la letra <code>s</code> (Finanzas, RecursosHumanos, Ventas).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-11">
+  <p class="enunciado"><span class="q-num">11.</span> Explicar qu&eacute; hace cada una de estas opciones del comando <code>grep</code>: <code>-i</code>, <code>-n</code>, <code>-r</code>, <code>-c</code>, <code>-E</code>.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-11"><code>-i</code>: ignora may&uacute;sculas y min&uacute;sculas (case-insensitive).<br><code>-n</code>: muestra el n&uacute;mero de la l&iacute;nea donde aparece el patr&oacute;n.<br><code>-r</code>: busca recursivamente dentro de directorios y subdirectorios.<br><code>-c</code>: cuenta la cantidad de l&iacute;neas que coinciden (no las muestra, solo cuenta).<br><code>-E</code>: habilita expresiones regulares <strong>extendidas</strong> (permite usar <code>|</code> para alternaci&oacute;n y otros operadores).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-12">
+  <p class="enunciado"><span class="q-num">12.</span> &iquest;Qu&eacute; hacen los comandos <code>tail -f</code>, <code>more</code> y <code>less</code>? &iquest;Cu&aacute;l es la diferencia entre <code>more</code> y <code>less</code>?</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-12"><code>tail -f</code>: muestra las &uacute;ltimas l&iacute;neas de un archivo y sigue mostrando nuevas l&iacute;neas a medida que se a&ntilde;aden. Muy &uacute;til para monitorear logs en tiempo real.<br><code>more</code>: pagina archivos grandes mostrando una pantalla a la vez. <strong>Solo permite avanzar</strong>, no retroceder.<br><code>less</code>: tambi&eacute;n pagina, pero permite desplazarse <strong>hacia adelante y hacia atr&aacute;s</strong>, buscar texto y salir cuando se quiera. Es la versi&oacute;n mejorada de more.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p7-13">
+  <p class="enunciado"><span class="q-num">13.</span> Explicar qu&eacute; significa <code>[^aeiou]</code> en una expresi&oacute;n regular y dar un ejemplo de uso con grep.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p7-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p7-13">Dentro de un grupo de corchetes <code>[]</code>, el s&iacute;mbolo <code>^</code> act&uacute;a como <strong>negaci&oacute;n</strong>. Por lo tanto <code>[^aeiou]</code> coincide con cualquier car&aacute;cter que <strong>no sea</strong> una vocal min&uacute;scula.<br>Ejemplo: <code>cat Gerencias | grep -E [^aeiou] --color</code> recorre el archivo y colorea los caracteres que no son vocales en cada l&iacute;nea.<br>Importante: el <code>^</code> dentro de <code>[]</code> es negaci&oacute;n; <strong>fuera</strong> de corchetes representa el inicio de l&iacute;nea.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p7-14">
+  <p class="enunciado"><span class="q-num">14.</span> El dispositivo <span class="completar-blank"></span> act&uacute;a como un &ldquo;agujero negro&rdquo;: cualquier cosa enviada ah&iacute; se descarta para siempre.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p7-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p7-14', ['/dev/null','dev/null'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p7-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p7-15">
+  <p class="enunciado"><span class="q-num">15.</span> Para actualizar la base de datos que utiliza el comando <code>locate</code>, se ejecuta el comando <span class="completar-blank"></span> (como root).</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p7-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p7-15', ['updatedb'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p7-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p7-16">
+  <p class="enunciado"><span class="q-num">16.</span> El filtro que cuenta l&iacute;neas, palabras o caracteres de un archivo se llama <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p7-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p7-16', ['wc'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p7-16"></div>
+</div>
+</div>
+
+<!-- ==================== PARCIAL 8 ==================== -->
+<div class="parcial-block" id="parcial-8">
+<h2 class="parcial-title">Parcial 8 — Integrador: Usuarios, SUDO, APT, Redes y SSH</h2>
+<p class="parcial-subtitle">Parcial integrador generado para pr&aacute;ctica. 16 preguntas &middot; 100 puntos</p>
+<div class="parcial-meta">
+  <span class="score-badge" id="score-p8">0 / 16</span>
+  <button class="btn-reset" onclick="resetParcial('p8')">&#8634; Reiniciar parcial</button>
+</div>
+
+<div class="pregunta" id="q-p8-1" data-correct="b">
+  <p class="enunciado"><span class="q-num">1.</span> &iquest;Cu&aacute;l es el orden correcto de las 4 fases del protocolo DHCP?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p8','1','a')">a) Offer &rarr; Discover &rarr; Request &rarr; ACK</button>
+    <button class="opcion" data-letter="b" onclick="responder('p8','1','b')">b) Discover &rarr; Offer &rarr; Request &rarr; ACK</button>
+    <button class="opcion" data-letter="c" onclick="responder('p8','1','c')">c) Request &rarr; Discover &rarr; Offer &rarr; ACK</button>
+    <button class="opcion" data-letter="d" onclick="responder('p8','1','d')">d) Discover &rarr; Request &rarr; Offer &rarr; ACK</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Las 4 fases siguen el acr&oacute;nimo <strong>DORA</strong>: Discover &rarr; Offer &rarr; Request &rarr; ACK.</span></div>
+</div>
+
+<div class="pregunta" id="q-p8-2" data-correct="c">
+  <p class="enunciado"><span class="q-num">2.</span> &iquest;Cu&aacute;l es la herramienta recomendada para editar el archivo <code>/etc/sudoers</code>?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p8','2','a')">a) nano</button>
+    <button class="opcion" data-letter="b" onclick="responder('p8','2','b')">b) vim</button>
+    <button class="opcion" data-letter="c" onclick="responder('p8','2','c')">c) visudo</button>
+    <button class="opcion" data-letter="d" onclick="responder('p8','2','d')">d) sudoedit</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">Se recomienda <code>visudo</code> porque verifica la sintaxis antes de guardar; un error en sudoers puede dejar al sistema sin acceso administrativo.</span></div>
+</div>
+
+<div class="pregunta" id="q-p8-3" data-correct="c">
+  <p class="enunciado"><span class="q-num">3.</span> &iquest;Qu&eacute; tipo de registro DNS se utiliza para asociar un nombre de dominio con una direcci&oacute;n IPv4?</p>
+  <div class="opciones">
+    <button class="opcion" data-letter="a" onclick="responder('p8','3','a')">a) Registro AAAA</button>
+    <button class="opcion" data-letter="b" onclick="responder('p8','3','b')">b) Registro MX</button>
+    <button class="opcion" data-letter="c" onclick="responder('p8','3','c')">c) Registro A</button>
+    <button class="opcion" data-letter="d" onclick="responder('p8','3','d')">d) Registro CNAME</button>
+  </div>
+  <div class="feedback hidden"><span class="feedback-icon"></span><span class="feedback-text">El registro tipo A asocia un nombre con una IPv4. AAAA es para IPv6, MX para correo, CNAME para alias.</span></div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-4">
+  <p class="enunciado"><span class="q-num">4.</span> Describir los <strong>3 tipos de usuarios</strong> que existen en GNU/Linux y dar el rango de UID t&iacute;pico de cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-4')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-4"><strong>Usuario root:</strong> el superusuario del sistema con acceso ilimitado. UID = <strong>0</strong>. Puede leer, escribir y ejecutar en cualquier archivo y directorio.<br><strong>Usuarios especiales (no-login):</strong> ejecutan servicios o tareas automatizadas (apache, mysql, sshd, www-data, nobody, daemon). UID t&iacute;pico entre <strong>1 y 100</strong>, definido en <code>/etc/login.defs</code>. No inician sesi&oacute;n interactiva.<br><strong>Usuarios normales:</strong> creados para personas reales que necesitan acceso. UID com&uacute;nmente <strong>superior a 1000</strong>. Tienen permisos plenos sobre su directorio home en <code>/home/usuario</code>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-5">
+  <p class="enunciado"><span class="q-num">5.</span> Explicar la estructura del archivo <code>/etc/passwd</code>: cu&aacute;ntos campos tiene y qu&eacute; significa cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-5')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-5"><code>/etc/passwd</code> tiene una l&iacute;nea por usuario con <strong>7 campos separados por dos puntos</strong> (<code>:</code>):<br>1. <strong>Login</strong> (nombre de usuario).<br>2. <strong>x</strong>: indica que la contrase&ntilde;a est&aacute; almacenada y encriptada en <code>/etc/shadow</code>.<br>3. <strong>UID</strong>: identificador num&eacute;rico del usuario.<br>4. <strong>GID</strong>: identificador num&eacute;rico del grupo principal.<br>5. <strong>Descripci&oacute;n</strong>: campo informativo (suele tener el nombre completo).<br>6. <strong>Home</strong>: directorio home asignado.<br>7. <strong>Shell</strong>: shell que se asigna al iniciar sesi&oacute;n.<br>Ejemplo: <code>alumno:x:1000:1000:Usuario Alumno:/home/alumno:/bin/bash</code>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-6">
+  <p class="enunciado"><span class="q-num">6.</span> &iquest;Qu&eacute; significa la regla <code>%sudo ALL=(ALL:ALL) ALL</code> en el archivo sudoers? Desglosar cada parte.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-6')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-6"><code>%sudo</code>: el <code>%</code> indica que la regla aplica a un <strong>grupo</strong> (no a un usuario individual). Aqu&iacute; aplica a todos los miembros del grupo <em>sudo</em>.<br><code>ALL=</code>: indica las m&aacute;quinas (hosts) donde la regla es v&aacute;lida; <em>ALL</em> = en todas.<br><code>(ALL:</code>: el usuario como quien pueden ejecutar comandos; <em>ALL</em> = como cualquier usuario.<br><code>:ALL)</code>: el grupo en nombre del cual pueden ejecutar; <em>ALL</em> = cualquier grupo.<br><code>ALL</code> (final): los comandos permitidos; <em>ALL</em> = cualquier comando.<br>En resumen: cualquier miembro del grupo sudo puede ejecutar cualquier comando, en cualquier m&aacute;quina, como cualquier usuario y cualquier grupo.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-7">
+  <p class="enunciado"><span class="q-num">7.</span> &iquest;Qu&eacute; diferencia hay entre <code>apt-get install</code> y <code>dpkg -i</code>? Explicar la relaci&oacute;n entre APT y dpkg.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-7')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-7"><strong>APT</strong> es una capa de <em>alto nivel</em> que descarga paquetes desde repositorios y resuelve dependencias autom&aacute;ticamente. <strong>dpkg</strong> es una capa de <em>bajo nivel</em> que instala/elimina archivos <code>.deb</code> locales pero <strong>no resuelve dependencias</strong>.<br><code>apt-get install</code> consulta el <code>sources.list</code>, descarga el paquete y todas sus dependencias y las instala.<br><code>dpkg -i paquete.deb</code> instala un .deb local; si requiere otros paquetes, falla con error y hay que instalarlos manualmente o ejecutar <code>apt-get -f install</code> despu&eacute;s.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-8">
+  <p class="enunciado"><span class="q-num">8.</span> Explicar el procedimiento general para <strong>recuperar la contrase&ntilde;a de root</strong> desde GRUB en un sistema Debian.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-8')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-8">1. Reiniciar la m&aacute;quina.<br>2. En el men&uacute; de GRUB, antes de que el contador llegue a cero, presionar <code>E</code> para editar las opciones de arranque.<br>3. Localizar la l&iacute;nea que comienza con <code>linux /boot/vmlinuz-... ro quiet</code>. Borrar <code>ro quiet</code> y agregar al final <code>rw init=/bin/bash</code>.<br>4. Presionar <strong>F10</strong> para arrancar con esa configuraci&oacute;n. El sistema arranca con bash como proceso 1, con el ra&iacute;z montado en lectura/escritura y privilegios de root.<br>5. Cuando aparece el prompt <code>root@(none):/#</code>, ejecutar <code>passwd</code> para cambiar la contrase&ntilde;a.<br>6. Reiniciar con <code>exec /sbin/init</code> (no usar reboot normal en este modo).</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-9">
+  <p class="enunciado"><span class="q-num">9.</span> Explicar las <strong>4 fases del protocolo DHCP</strong> (DORA) describiendo qu&eacute; ocurre en cada una.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-9')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-9"><strong>1. DHCP Discover:</strong> el dispositivo cliente, sin IP, env&iacute;a una solicitud en modo <em>broadcast</em> a toda la red buscando un servidor DHCP.<br><strong>2. DHCP Offer:</strong> el servidor DHCP recibe el Discover y responde con una oferta que incluye una IP libre, m&aacute;scara de red, gateway, servidores DNS y el tiempo de alquiler (<em>lease time</em>).<br><strong>3. DHCP Request:</strong> el cliente acepta la oferta y env&iacute;a un mensaje (tambi&eacute;n broadcast) confirmando que acepta esa IP. As&iacute; otros servidores DHCP en la red saben que la elecci&oacute;n ya fue hecha.<br><strong>4. DHCP ACK:</strong> el servidor confirma que la IP fue asignada y es v&aacute;lida. A partir de aqu&iacute; el cliente ya puede comunicarse en la red.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-10">
+  <p class="enunciado"><span class="q-num">10.</span> Explicar para qu&eacute; sirven los archivos <code>sshd_config</code> y <code>ssh_config</code> y mencionar tres par&aacute;metros importantes de cada uno.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-10')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-10">Ambos est&aacute;n en <code>/etc/ssh/</code>.<br><strong>sshd_config</strong> configura SSH como <strong>servidor</strong>. Par&aacute;metros: <code>port</code> (puerto TCP, default 22), <code>PermitRootLogin</code> (default <em>Prohibit-password</em>), <code>AuthorizedKeysFile</code> (d&oacute;nde busca las claves p&uacute;blicas, por default <code>.ssh/authorized_keys</code>), <code>PasswordAuthentication</code>, <code>PubkeyAuthentication</code>.<br><strong>ssh_config</strong> configura SSH como <strong>cliente</strong>. Par&aacute;metros: <code>Host</code> (lista de patrones de hosts), <code>port</code>, <code>IdentityFile</code> (archivo con la clave privada), <code>PubkeyAuthentication</code>, <code>PasswordAuthentication</code>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-11">
+  <p class="enunciado"><span class="q-num">11.</span> Describir el proceso para configurar autenticaci&oacute;n SSH por clave p&uacute;blica/privada desde cero (incluyendo los comandos involucrados).</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-11')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-11">1. Generar el par de claves en el cliente con <code>ssh-keygen</code>. El comando crea dos archivos en <code>~/.ssh/</code>: <code>id_rsa</code> (clave privada, <strong>nunca compartir</strong>) e <code>id_rsa.pub</code> (clave p&uacute;blica, se comparte).<br>2. Durante la generaci&oacute;n, opcionalmente se puede definir una <em>passphrase</em> para proteger la clave privada.<br>3. Copiar la clave p&uacute;blica al servidor remoto con <code>ssh-copy-id usuario@servidor</code>. Esto pide la contrase&ntilde;a del usuario remoto por &uacute;ltima vez y agrega la clave p&uacute;blica al archivo <code>~/.ssh/authorized_keys</code> del servidor.<br>4. Conectar nuevamente con <code>ssh usuario@servidor</code>; ya no se solicitar&aacute; contrase&ntilde;a porque la autenticaci&oacute;n se hace por claves.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-12">
+  <p class="enunciado"><span class="q-num">12.</span> &iquest;Cu&aacute;l es la diferencia entre el modelo <strong>Rolling Release</strong> y <strong>Standard Release</strong>? Mencionar distribuciones de cada tipo.</p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-12')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-12"><strong>Rolling Release:</strong> el sistema se actualiza de forma continua, sin versiones fijas. Los paquetes se renuevan constantemente para tener siempre el software m&aacute;s reciente, pero esto aumenta el riesgo de inestabilidad. Distribuciones: <strong>Arch Linux, OpenSUSE</strong>.<br><strong>Standard Release (o Point Release):</strong> las actualizaciones se agrupan en versiones estables que se publican peri&oacute;dicamente. Prioriza la estabilidad y es com&uacute;n en entornos de producci&oacute;n. Distribuciones: <strong>Debian, Ubuntu LTS, Fedora</strong>.</div>
+</div>
+
+<div class="pregunta-desarrollo" id="q-p8-13">
+  <p class="enunciado"><span class="q-num">13.</span> Explicar qu&eacute; hace cada una de las 6 directivas del archivo <code>/etc/network/interfaces</code> que aparecen en el siguiente bloque:<br><code>auto eth0<br>iface eth0 inet static<br>&nbsp;&nbsp;address 192.168.0.10<br>&nbsp;&nbsp;netmask 255.255.255.0<br>&nbsp;&nbsp;gateway 192.168.0.1</code></p>
+  <button class="btn-revelar" onclick="toggleRespuesta('p8-13')">Ver respuesta modelo</button>
+  <div class="respuesta-modelo" id="resp-p8-13"><code>auto eth0</code>: indica que la interfaz <em>eth0</em> debe iniciarse autom&aacute;ticamente cuando arranca el sistema.<br><code>iface eth0 inet static</code>: define la interfaz <em>eth0</em>; <em>inet</em> = protocolo IPv4; <em>static</em> = m&eacute;todo de configuraci&oacute;n manual (IP fija).<br><code>address 192.168.0.10</code>: direcci&oacute;n IP asignada a la interfaz.<br><code>netmask 255.255.255.0</code>: m&aacute;scara de red, define qu&eacute; parte de la IP es de red y qu&eacute; parte de host (en este caso 24 bits para red, equivalente a /24).<br><code>gateway 192.168.0.1</code>: puerta de enlace predeterminada por donde salen los paquetes destinados fuera de la red local.</div>
+</div>
+
+<div class="pregunta-completar" id="q-p8-14">
+  <p class="enunciado"><span class="q-num">14.</span> Para agregar a un usuario a un grupo conservando los grupos secundarios anteriores se usa el comando <code>usermod</code> con la opci&oacute;n <span class="completar-blank"></span> grupo usuario.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p8-14" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p8-14', ['-aG','-Ga','aG'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p8-14"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p8-15">
+  <p class="enunciado"><span class="q-num">15.</span> El comando <span class="completar-blank"></span> elimina el paquete instalado <strong>junto con todos sus archivos de configuraci&oacute;n</strong>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p8-15" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p8-15', ['apt-get purge','apt purge','apt-get purge [app]'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p8-15"></div>
+</div>
+
+<div class="pregunta-completar" id="q-p8-16">
+  <p class="enunciado"><span class="q-num">16.</span> El comando para copiar la clave p&uacute;blica de un usuario al archivo <code>authorized_keys</code> de un servidor remoto es <span class="completar-blank"></span>.</p>
+  <div class="completar-inline">
+    <input type="text" class="completar-input" id="input-p8-16" placeholder="Completar...">
+    <button class="btn-verificar" onclick="verificarCompletar('p8-16', ['ssh-copy-id'])">Verificar</button>
+  </div>
+  <div class="completar-feedback" id="cf-p8-16"></div>
+</div>
+</div>
+
 <!-- ==================== RESUMEN DE TEMAS A REPASAR ==================== -->
 <div class="resumen-trigger">
   <h2>&iquest;Termin&aacute;ste los parciales?</h2>
@@ -13308,7 +13828,75 @@ const parcialMapeo = {
   'q-p4-13': { apunte: '01', titulo: 'Origen' },
   'q-p4-14': { apunte: '16', titulo: '¿Cómo generar las claves pública/privada?' },
   'q-p4-15': { apunte: '06', titulo: 'Directorios' },
-  'q-p4-16': { apunte: '08', titulo: 'Redireccionamiento' }
+  'q-p4-16': { apunte: '08', titulo: 'Redireccionamiento' },
+  // Parcial 5
+  'q-p5-1':  { apunte: '01', titulo: 'Historia' },
+  'q-p5-2':  { apunte: '03', titulo: 'Hipervisor de tipo 1 (BareMetal)' },
+  'q-p5-3':  { apunte: '01', titulo: 'Historia' },
+  'q-p5-4':  { apunte: '03', titulo: '¿Qué es la virtualización?' },
+  'q-p5-5':  { apunte: '03', titulo: 'Diferencia clave entre Tipo 1 y Tipo 2' },
+  'q-p5-6':  { apunte: '01', titulo: 'Origen' },
+  'q-p5-7':  { apunte: '03', titulo: 'Componentes' },
+  'q-p5-8':  { apunte: '01', titulo: 'Historia' },
+  'q-p5-9':  { apunte: '01', titulo: 'Evolución' },
+  'q-p5-10': { apunte: '03', titulo: '¿Qué es la virtualización?' },
+  'q-p5-11': { apunte: '01', titulo: 'Evolución' },
+  'q-p5-12': { apunte: '03', titulo: 'Historia del hipervisor' },
+  'q-p5-13': { apunte: '03', titulo: 'Componentes' },
+  'q-p5-14': { apunte: '04', titulo: 'sh — Bourne Shell' },
+  'q-p5-15': { apunte: '03', titulo: 'Hipervisor de tipo 1 (BareMetal)' },
+  'q-p5-16': { apunte: '01', titulo: 'Origen' },
+  // Parcial 6
+  'q-p6-1':  { apunte: '04', titulo: 'Bash — Bourne Again Shell' },
+  'q-p6-2':  { apunte: '07', titulo: 'VIM' },
+  'q-p6-3':  { apunte: '05', titulo: '¿Qué es un "comando en GNU/Linux"?' },
+  'q-p6-4':  { apunte: '04', titulo: 'Shell' },
+  'q-p6-5':  { apunte: '07', titulo: 'VIM' },
+  'q-p6-6':  { apunte: '05', titulo: 'Comandos' },
+  'q-p6-7':  { apunte: '05', titulo: 'Comandos' },
+  'q-p6-8':  { apunte: '05', titulo: '¿Qué es un "comando en GNU/Linux"?' },
+  'q-p6-9':  { apunte: '07', titulo: 'Guía básica de comandos de VIM' },
+  'q-p6-10': { apunte: '07', titulo: '¿Qué es un editor de texto?' },
+  'q-p6-11': { apunte: '05', titulo: 'Comandos' },
+  'q-p6-12': { apunte: '05', titulo: 'Comandos' },
+  'q-p6-13': { apunte: '04', titulo: 'Terminal de texto' },
+  'q-p6-14': { apunte: '07', titulo: 'Guía básica de comandos de VIM' },
+  'q-p6-15': { apunte: '05', titulo: 'Comandos' },
+  'q-p6-16': { apunte: '05', titulo: 'Comandos' },
+  // Parcial 7
+  'q-p7-1':  { apunte: '09', titulo: 'Streams en Linux' },
+  'q-p7-2':  { apunte: '10', titulo: 'Cuantificación' },
+  'q-p7-3':  { apunte: '08', titulo: 'Otros tipos de redireccionamiento' },
+  'q-p7-4':  { apunte: '09', titulo: 'Streams en Linux' },
+  'q-p7-5':  { apunte: '08', titulo: 'Redireccionamiento' },
+  'q-p7-6':  { apunte: '08', titulo: 'Redireccionamiento de stderr (Standard Error)' },
+  'q-p7-7':  { apunte: '08', titulo: 'Pipes' },
+  'q-p7-8':  { apunte: '08', titulo: 'Buscar en Linux' },
+  'q-p7-9':  { apunte: '10', titulo: 'Cuantificación' },
+  'q-p7-10': { apunte: '10', titulo: 'Caracteres especiales' },
+  'q-p7-11': { apunte: '09', titulo: 'grep — El filtro' },
+  'q-p7-12': { apunte: '09', titulo: 'Filtros' },
+  'q-p7-13': { apunte: '10', titulo: 'Agrupación' },
+  'q-p7-14': { apunte: '08', titulo: 'Otros tipos de redireccionamiento' },
+  'q-p7-15': { apunte: '08', titulo: 'locate — Búsqueda rápida por base de datos' },
+  'q-p7-16': { apunte: '09', titulo: 'wc' },
+  // Parcial 8
+  'q-p8-1':  { apunte: '15', titulo: 'Las 4 fases de DHCP' },
+  'q-p8-2':  { apunte: '12', titulo: 'SUDOERS' },
+  'q-p8-3':  { apunte: '15', titulo: 'Tipos de Registros en un DNS' },
+  'q-p8-4':  { apunte: '11', titulo: 'Tipos de usuarios' },
+  'q-p8-5':  { apunte: '11', titulo: 'El archivo /etc/passwd' },
+  'q-p8-6':  { apunte: '12', titulo: 'Privilegios por grupo en sudoers' },
+  'q-p8-7':  { apunte: '13', titulo: 'APT vs dpkg' },
+  'q-p8-8':  { apunte: '11', titulo: 'Recuperación de la contraseña de root desde GRUB' },
+  'q-p8-9':  { apunte: '15', titulo: 'Las 4 fases de DHCP' },
+  'q-p8-10': { apunte: '16', titulo: 'Instalación y configuración' },
+  'q-p8-11': { apunte: '16', titulo: '¿Cómo generar las claves pública/privada?' },
+  'q-p8-12': { apunte: '13', titulo: 'Diferencias entre Rolling Release y Standard Release' },
+  'q-p8-13': { apunte: '14', titulo: 'Configuración de Red en GNU/Linux' },
+  'q-p8-14': { apunte: '11', titulo: 'usermod' },
+  'q-p8-15': { apunte: '13', titulo: 'Comandos — Referencia rápida' },
+  'q-p8-16': { apunte: '16', titulo: '¿Cómo copiar la clave pública al servidor remoto?' }
 };
 
 function showSection(id) {
