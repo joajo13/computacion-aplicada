@@ -546,6 +546,220 @@ body {
   color: var(--red);
 }
 
+/* Self-evaluation (parciales) */
+.self-eval {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+.self-eval-label {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.btn-self {
+  padding: 5px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--muted);
+  transition: all .15s;
+}
+.btn-self:hover { border-color: var(--accent); color: var(--accent); }
+.btn-self-bien.active {
+  background: var(--green-bg);
+  border-color: var(--green);
+  color: #15803d;
+  font-weight: 600;
+}
+.btn-self-mal.active {
+  background: var(--red-bg);
+  border-color: var(--red);
+  color: #b91c1c;
+  font-weight: 600;
+}
+.pregunta.marked-wrong,
+.pregunta-desarrollo.marked-wrong,
+.pregunta-completar.marked-wrong {
+  border-left: 4px solid var(--red);
+}
+.pregunta.marked-correct,
+.pregunta-desarrollo.marked-correct,
+.pregunta-completar.marked-correct {
+  border-left: 4px solid var(--green);
+}
+
+/* Resumen de temas a repasar */
+.resumen-trigger {
+  margin: 32px 0 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.resumen-trigger h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  border: none;
+  padding: 0;
+}
+.resumen-trigger p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.btn-resumen {
+  padding: 10px 22px;
+  font-size: 14px;
+  font-family: var(--font);
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-resumen:hover { background: var(--accent-hover); }
+
+#resumen-temas {
+  display: none;
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+}
+#resumen-temas.visible { display: block; }
+#resumen-temas h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  border: none;
+  padding: 0;
+}
+.resumen-empty {
+  padding: 16px;
+  background: var(--green-bg);
+  border-radius: 8px;
+  color: #15803d;
+  font-size: 14px;
+}
+.resumen-intro {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.resumen-apunte {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.resumen-apunte:last-child { border-bottom: none; }
+.resumen-apunte h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 12px 0;
+}
+.resumen-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.resumen-pregunta {
+  font-size: 13.5px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.resumen-titulo {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.resumen-titulo strong { color: var(--text); }
+.resumen-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn-ir-seccion,
+.btn-volver-parcial {
+  padding: 7px 14px;
+  font-size: 13px;
+  font-family: var(--font);
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all .15s;
+}
+.btn-ir-seccion {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-ir-seccion:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-volver-parcial {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-volver-parcial:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Floating "Volver al parcial" button */
+#floating-volver {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, .3);
+  transition: background .15s, transform .15s;
+}
+#floating-volver.visible { display: block; }
+#floating-volver:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+/* Highlight pulses */
+.highlight-section {
+  animation: pulseHighlight 2.5s ease-out;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-left: -8px;
+}
+.pregunta.highlight-pregunta,
+.pregunta-desarrollo.highlight-pregunta,
+.pregunta-completar.highlight-pregunta {
+  animation: pulseHighlightBorder 2.5s ease-out;
+}
+@keyframes pulseHighlight {
+  0%   { background: #fef3c7; box-shadow: 0 0 0 4px #fcd34d; }
+  100% { background: transparent; box-shadow: 0 0 0 0 transparent; }
+}
+@keyframes pulseHighlightBorder {
+  0%   { box-shadow: 0 0 0 4px #fcd34d; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
 @media (max-width: 900px) {
   #menu-toggle { display: block; }
   .sidebar {
@@ -12980,14 +13194,122 @@ Enter file in which to save the key (/root/.ssh/id_rsa):
 </div>
 </div>
 
+<!-- ==================== RESUMEN DE TEMAS A REPASAR ==================== -->
+<div class="resumen-trigger">
+  <h2>&iquest;Termin&aacute;ste los parciales?</h2>
+  <p>Marc&aacute; cada respuesta como bien o mal y despu&eacute;s ver&aacute;s un resumen con los temas que conviene repasar.</p>
+  <button class="btn-resumen" onclick="mostrarResumen()">&#x1F4D6; Ver resumen de temas a repasar</button>
+</div>
+
+<div id="resumen-temas">
+  <h2>&#x1F4DA; Temas a repasar</h2>
+  <div id="resumen-content"></div>
+</div>
+
   </div>
 </section>
 
   </main>
 </div>
+
+<button id="floating-volver" onclick="volverDesdeApunte()">&#x21A9; Volver al parcial</button>
+
 <script>
 
-const state = {};
+const state = {
+  wrongAnswers: {},
+  navContext: null
+};
+
+const apunteNombres = {
+  '01': 'Historia y evolución de GNU/Linux',
+  '02': 'Descarga e instalación de Linux',
+  '03': 'Virtualización',
+  '04': 'Shell — Introducción a la terminal',
+  '05': 'Comandos básicos',
+  '06': 'Estándar FHS (File Hierarchy Standard)',
+  '07': 'Editores de texto (vi / nano)',
+  '08': 'Redirecciones y Pipes',
+  '09': 'Streams y Filtros',
+  '10': 'Expresiones Regulares (Regex)',
+  '11': 'Administración de Usuarios',
+  '12': 'SUDO',
+  '13': 'Gestor de Software (APT / dpkg)',
+  '14': 'Redes (IP, máscara, CIDR, config)',
+  '15': 'DNS y DHCP',
+  '16': 'SSH'
+};
+
+const parcialMapeo = {
+  // Parcial 1
+  'q-p1-1':  { apunte: '14', titulo: 'Dirección IP' },
+  'q-p1-2':  { apunte: '11', titulo: '3) Comandos' },
+  'q-p1-3':  { apunte: '16', titulo: 'Instalación y configuración' },
+  'q-p1-4':  { apunte: '13', titulo: 'Actualización del índice local' },
+  'q-p1-5':  { apunte: '01', titulo: 'Origen' },
+  'q-p1-6':  { apunte: '05', titulo: 'Comandos' },
+  'q-p1-7':  { apunte: '06', titulo: 'Directorios' },
+  'q-p1-8':  { apunte: '15', titulo: 'DNS — Domain Name System' },
+  'q-p1-9':  { apunte: '11', titulo: 'Usuario root' },
+  'q-p1-10': { apunte: '11', titulo: '3) Comandos' },
+  'q-p1-11': { apunte: '14', titulo: 'Configuración de Red en GNU/Linux' },
+  'q-p1-12': { apunte: '11', titulo: 'Usuarios especiales' },
+  'q-p1-13': { apunte: '01', titulo: 'Origen' },
+  'q-p1-14': { apunte: '06', titulo: 'Directorios' },
+  'q-p1-15': { apunte: '09', titulo: 'stdout' },
+  'q-p1-16': { apunte: '13', titulo: 'Búsqueda de paquetes' },
+  // Parcial 2
+  'q-p2-1':  { apunte: '05', titulo: 'Comandos' },
+  'q-p2-2':  { apunte: '05', titulo: 'Comandos' },
+  'q-p2-3':  { apunte: '06', titulo: 'Directorios' },
+  'q-p2-4':  { apunte: '05', titulo: 'Comandos' },
+  'q-p2-5':  { apunte: '11', titulo: '3) Comandos' },
+  'q-p2-6':  { apunte: '08', titulo: 'Pipes' },
+  'q-p2-7':  { apunte: '08', titulo: 'Redireccionamiento' },
+  'q-p2-8':  { apunte: '08', titulo: 'Buscar en Linux' },
+  'q-p2-9':  { apunte: '06', titulo: '¿Qué es el FHS?' },
+  'q-p2-10': { apunte: '07', titulo: 'Guía básica de comandos de VIM' },
+  'q-p2-11': { apunte: '09', titulo: 'Filtros' },
+  'q-p2-12': { apunte: '11', titulo: '3) Comandos' },
+  'q-p2-13': { apunte: '09', titulo: 'grep — El filtro' },
+  'q-p2-14': { apunte: '06', titulo: 'Directorios' },
+  'q-p2-15': { apunte: '05', titulo: 'Comandos' },
+  'q-p2-16': { apunte: '09', titulo: 'stderr' },
+  // Parcial 3
+  'q-p3-1':  { apunte: '11', titulo: 'El archivo /etc/shadow' },
+  'q-p3-2':  { apunte: '11', titulo: '3) Comandos' },
+  'q-p3-3':  { apunte: '14', titulo: 'Máscara de Red' },
+  'q-p3-4':  { apunte: '15', titulo: 'DHCP — Dynamic Host Configuration Protocol' },
+  'q-p3-5':  { apunte: '16', titulo: 'Métodos de autenticación' },
+  'q-p3-6':  { apunte: '12', titulo: 'SUDOERS' },
+  'q-p3-7':  { apunte: '11', titulo: 'El archivo /etc/passwd' },
+  'q-p3-8':  { apunte: '14', titulo: 'Máscara de Red' },
+  'q-p3-9':  { apunte: '14', titulo: 'Configuración de Red en GNU/Linux' },
+  'q-p3-10': { apunte: '13', titulo: 'APT vs dpkg' },
+  'q-p3-11': { apunte: '11', titulo: '3) Comandos' },
+  'q-p3-12': { apunte: '16', titulo: 'SSH — ¿Qué es?' },
+  'q-p3-13': { apunte: '11', titulo: '3) Comandos' },
+  'q-p3-14': { apunte: '16', titulo: 'SSH — ¿Qué es?' },
+  'q-p3-15': { apunte: '11', titulo: '3) Comandos' },
+  'q-p3-16': { apunte: '15', titulo: 'DNS — Domain Name System' },
+  // Parcial 4
+  'q-p4-1':  { apunte: '05', titulo: 'Comandos' },
+  'q-p4-2':  { apunte: '11', titulo: 'Tipos de usuarios' },
+  'q-p4-3':  { apunte: '01', titulo: 'Origen' },
+  'q-p4-4':  { apunte: '16', titulo: 'Instalación y configuración' },
+  'q-p4-5':  { apunte: '11', titulo: '3) Comandos' },
+  'q-p4-6':  { apunte: '10', titulo: 'Expresiones regulares' },
+  'q-p4-7':  { apunte: '03', titulo: '¿Qué es la virtualización?' },
+  'q-p4-8':  { apunte: '14', titulo: 'Dirección IP' },
+  'q-p4-9':  { apunte: '13', titulo: 'sources.list' },
+  'q-p4-10': { apunte: '08', titulo: 'Pipes' },
+  'q-p4-11': { apunte: '12', titulo: 'SUDOERS' },
+  'q-p4-12': { apunte: '14', titulo: 'Máscara de Red' },
+  'q-p4-13': { apunte: '01', titulo: 'Origen' },
+  'q-p4-14': { apunte: '16', titulo: '¿Cómo generar las claves pública/privada?' },
+  'q-p4-15': { apunte: '06', titulo: 'Directorios' },
+  'q-p4-16': { apunte: '08', titulo: 'Redireccionamiento' }
+};
 
 function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -13002,6 +13324,10 @@ function showSection(id) {
   if (window.innerWidth <= 900) {
     document.getElementById('sidebar').classList.remove('open');
   }
+  // Hide floating Volver button by default; irASeccion re-shows it after navigating.
+  const floating = document.getElementById('floating-volver');
+  if (floating) floating.classList.remove('visible');
+  if (id === 'parciales') state.navContext = null;
 }
 
 function responder(apunteId, qNum, letra) {
@@ -13028,6 +13354,10 @@ function responder(apunteId, qNum, letra) {
   feedback.classList.remove('hidden');
   el.classList.add('answered');
   updateScore(apunteId);
+  // Auto-track wrong answers in parciales (only multiple-choice questions in parciales)
+  if (parcialMapeo[qid]) {
+    marcarPregunta(qid, letra === correcta);
+  }
 }
 
 function updateScore(apunteId) {
@@ -13111,6 +13441,166 @@ function verificarCompletar(id, respuestas) {
     fb.textContent = 'Incorrecto. ' + etiqueta + esperadas;
     fb.classList.add('cf-wrong');
   }
+  const qid = 'q-' + id;
+  if (parcialMapeo[qid]) {
+    marcarPregunta(qid, ok);
+  }
+}
+
+function marcarPregunta(qid, correcta) {
+  const el = document.getElementById(qid);
+  if (!el || !parcialMapeo[qid]) return;
+  el.classList.remove('marked-wrong', 'marked-correct');
+  // Reflect state on self-eval buttons (if present)
+  const bien = el.querySelector('.btn-self-bien');
+  const mal = el.querySelector('.btn-self-mal');
+  if (bien) bien.classList.toggle('active', !!correcta);
+  if (mal) mal.classList.toggle('active', !correcta);
+
+  if (correcta) {
+    delete state.wrongAnswers[qid];
+    el.classList.add('marked-correct');
+  } else {
+    const enunciadoEl = el.querySelector('.enunciado');
+    const enunciado = enunciadoEl ? enunciadoEl.textContent.trim() : qid;
+    state.wrongAnswers[qid] = {
+      qid: qid,
+      apunte: parcialMapeo[qid].apunte,
+      titulo: parcialMapeo[qid].titulo,
+      enunciado: enunciado
+    };
+    el.classList.add('marked-wrong');
+  }
+}
+
+function autoEvaluar(qid, correcta) {
+  marcarPregunta(qid, correcta);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+function mostrarResumen() {
+  const wrong = Object.values(state.wrongAnswers);
+  const container = document.getElementById('resumen-content');
+  const panel = document.getElementById('resumen-temas');
+  if (!container || !panel) return;
+  if (wrong.length === 0) {
+    container.innerHTML = '<p class="resumen-empty">¡Perfecto! No hay respuestas marcadas como incorrectas. Si todavía no marcaste tus respuestas de desarrollo como bien o mal, hacelo arriba para ver qué temas conviene repasar.</p>';
+  } else {
+    const grouped = {};
+    wrong.forEach(w => {
+      if (!grouped[w.apunte]) grouped[w.apunte] = [];
+      grouped[w.apunte].push(w);
+    });
+    const total = wrong.length;
+    const apuntesCount = Object.keys(grouped).length;
+    let html = '<p class="resumen-intro">Tenés <strong>' + total + '</strong> ' +
+      (total === 1 ? 'pregunta marcada como incorrecta' : 'preguntas marcadas como incorrectas') +
+      ' en <strong>' + apuntesCount + '</strong> ' +
+      (apuntesCount === 1 ? 'apunte' : 'apuntes') + '. Repasá estos temas:</p>';
+    Object.keys(grouped).sort().forEach(apunte => {
+      html += '<div class="resumen-apunte">';
+      html += '<h3>' + apunte + '. ' + escapeHtml(apunteNombres[apunte] || ('Apunte ' + apunte)) + '</h3>';
+      grouped[apunte].forEach(item => {
+        const tituloEsc = escapeHtml(item.titulo).replace(/'/g, "&#39;");
+        const tituloAttr = item.titulo.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        html += '<div class="resumen-item">' +
+          '<p class="resumen-pregunta">' + escapeHtml(item.enunciado) + '</p>' +
+          '<p class="resumen-titulo">📍 Sección del apunte: <strong>' + tituloEsc + '</strong></p>' +
+          '<div class="resumen-actions">' +
+            '<button class="btn-ir-seccion" onclick="irASeccion(\'' + item.apunte + '\', \'' + tituloAttr + '\', \'' + item.qid + '\')">→ Ir a la sección del apunte</button>' +
+            '<button class="btn-volver-parcial" onclick="volverAPregunta(\'' + item.qid + '\')">↩ Volver a la pregunta</button>' +
+          '</div>' +
+        '</div>';
+      });
+      html += '</div>';
+    });
+    container.innerHTML = html;
+  }
+  panel.classList.add('visible');
+  panel.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function irASeccion(apunteId, titulo, fromQid) {
+  state.navContext = { fromQid: fromQid };
+  showSection(apunteId);
+  const floating = document.getElementById('floating-volver');
+  if (floating) {
+    floating.dataset.fromQid = fromQid;
+    floating.classList.add('visible');
+  }
+  setTimeout(() => {
+    const sec = document.getElementById('sec-' + apunteId);
+    if (!sec) return;
+    const headings = sec.querySelectorAll('h2, h3');
+    let target = null;
+    const tituloLower = (titulo || '').toLowerCase();
+    for (const h of headings) {
+      if (h.textContent.trim().toLowerCase().indexOf(tituloLower) !== -1) {
+        target = h;
+        break;
+      }
+    }
+    if (target) {
+      target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      target.classList.add('highlight-section');
+      setTimeout(() => target.classList.remove('highlight-section'), 2800);
+    }
+  }, 120);
+}
+
+function volverAPregunta(qid) {
+  showSection('parciales');
+  const floating = document.getElementById('floating-volver');
+  if (floating) floating.classList.remove('visible');
+  state.navContext = null;
+  setTimeout(() => {
+    const el = document.getElementById(qid);
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth', block: 'center'});
+      el.classList.add('highlight-pregunta');
+      setTimeout(() => el.classList.remove('highlight-pregunta'), 2800);
+    }
+  }, 120);
+}
+
+function volverDesdeApunte() {
+  const floating = document.getElementById('floating-volver');
+  const qid = floating ? floating.dataset.fromQid : null;
+  if (qid) {
+    volverAPregunta(qid);
+  } else {
+    showSection('parciales');
+  }
+}
+
+function inicializarSelfEval() {
+  Object.keys(parcialMapeo).forEach(qid => {
+    const el = document.getElementById(qid);
+    if (!el || el.querySelector('.self-eval')) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'self-eval';
+    const isMC = el.classList.contains('pregunta');
+    const isCompletar = el.classList.contains('pregunta-completar');
+    const labelText = (isMC || isCompletar)
+      ? 'Marcá manualmente:'
+      : '¿Cómo te fue?';
+    wrap.innerHTML =
+      '<span class="self-eval-label">' + labelText + '</span>' +
+      '<button type="button" class="btn-self btn-self-bien" onclick="autoEvaluar(\'' + qid + '\', true)">✓ Respondí bien</button>' +
+      '<button type="button" class="btn-self btn-self-mal"  onclick="autoEvaluar(\'' + qid + '\', false)">✗ Respondí mal</button>';
+    el.appendChild(wrap);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', inicializarSelfEval);
+} else {
+  inicializarSelfEval();
 }
 
 function resetParcial(parcialId) {
@@ -13140,6 +13630,18 @@ function resetParcial(parcialId) {
     f.classList.remove('cf-correct', 'cf-wrong');
     f.textContent = '';
     f.style.display = 'none';
+  });
+  // Clear self-eval state and tracked wrong answers for this parcial
+  block.querySelectorAll('.btn-self').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  block.querySelectorAll('.pregunta, .pregunta-desarrollo, .pregunta-completar').forEach(function(p) {
+    p.classList.remove('marked-wrong', 'marked-correct');
+  });
+  Object.keys(state.wrongAnswers).forEach(function(qid) {
+    if (qid.indexOf('q-' + parcialId + '-') === 0) {
+      delete state.wrongAnswers[qid];
+    }
   });
   var badge = document.getElementById('score-' + parcialId);
   if (badge) badge.textContent = '0 / 16';
